@@ -1,0 +1,2966 @@
+[
+  {
+    "code":0.2,
+    "description":"Intravascular imaging of blood vessels"
+  },
+  {
+    "code":0.22,
+    "description":"Intravascular imaging of intrathoracic vessels"
+  },
+  {
+    "code":0.49,
+    "description":"SuperSaturated oxygen therapy"
+  },
+  {
+    "code":0.5,
+    "description":"Implantation of cardiac resynchronization pacemaker without mention of defibrillation, total system (CRT-P)"
+  },
+  {
+    "code":0.51,
+    "description":"Implantation of cardiac resynchronization defibrillation, total system (CRT-D)"
+  },
+  {
+    "code":0.53,
+    "description":"Implantation or replacement of cardiac resynchronization pacemaker pulse generator only (CRT-P)"
+  },
+  {
+    "code":0.62,
+    "description":"Percutaneous angioplasty or atherectomy intracranial vessel"
+  },
+  {
+    "code":0.66,
+    "description":"Parcutaneous transluminal coronary angioplasty (PTCA) or coronary atherectomy"
+  },
+  {
+    "code":0.7,
+    "description":"Revision of hip replacement, both acetabular and femoral components"
+  },
+  {
+    "code":0.8,
+    "description":"Revision of knee replacement, total (all components)"
+  },
+  {
+    "code":1.53,
+    "description":"Lobectomy of brain"
+  },
+  {
+    "code":2.0,
+    "description":"Cranioplasty"
+  },
+  {
+    "code":2.05,
+    "description":"Insertion of skull plate"
+  },
+  {
+    "code":2.2,
+    "description":"Ventriculostomy"
+  },
+  {
+    "code":2.3,
+    "description":"Extracranial ventricular shunt"
+  },
+  {
+    "code":2.31,
+    "description":"Ventricular shunt to structure in head and neck"
+  },
+  {
+    "code":2.34,
+    "description":"Ventricular shunt to abdominal cavity and organs"
+  },
+  {
+    "code":2.93,
+    "description":"Implantation of intracranial neurostimulator"
+  },
+  {
+    "code":3.09,
+    "description":"Other exploration and decompression of spinal canal"
+  },
+  {
+    "code":3.2,
+    "description":"Chordotomy"
+  },
+  {
+    "code":3.29,
+    "description":"Other chordotomy"
+  },
+  {
+    "code":3.3,
+    "description":"Diagnostic procedures on spinal cord and spinal canal structures"
+  },
+  {
+    "code":3.51,
+    "description":"Repair of spinal meningocele"
+  },
+  {
+    "code":3.52,
+    "description":"Repair of spinal myelomeningocele"
+  },
+  {
+    "code":3.7,
+    "description":"Shunt of spinal theca"
+  },
+  {
+    "code":3.79,
+    "description":"Other shunt of spinal theca"
+  },
+  {
+    "code":3.92,
+    "description":"Injection of other agent into spinal canal"
+  },
+  {
+    "code":3.93,
+    "description":"Implantation or replacement of spinal neurostimulator lead(s)"
+  },
+  {
+    "code":3.94,
+    "description":"Removal of spinal neurostimulator lead(s)"
+  },
+  {
+    "code":3.96,
+    "description":"Percutaneous denervation of facet"
+  },
+  {
+    "code":3.98,
+    "description":"Removal of spinal thecal shunt"
+  },
+  {
+    "code":4.01,
+    "description":"Excision of acoustic neuroma"
+  },
+  {
+    "code":4.43,
+    "description":"Release of carpal tunnel"
+  },
+  {
+    "code":4.44,
+    "description":"Release of tarsal tunnel"
+  },
+  {
+    "code":4.49,
+    "description":"Other peripheral nerve or ganglion decompression or lysis of adhesions"
+  },
+  {
+    "code":4.5,
+    "description":"Cranial or peripheral nerve graft"
+  },
+  {
+    "code":4.6,
+    "description":"Transposition of cranial and peripheral nerves"
+  },
+  {
+    "code":4.7,
+    "description":"Other cranial or peripheral neuroplasty"
+  },
+  {
+    "code":4.71,
+    "description":"Hypoglossal-facial anastomosis"
+  },
+  {
+    "code":4.74,
+    "description":"Other anastomosis of cranial or peripheral nerve"
+  },
+  {
+    "code":4.75,
+    "description":"Revision of previous repair of cranial and peripheral nerves"
+  },
+  {
+    "code":4.79,
+    "description":"Other neuroplasty"
+  },
+  {
+    "code":4.89,
+    "description":"Injection of other agent, except neurolytic"
+  },
+  {
+    "code":4.92,
+    "description":"Implantation or replacement of peripheral neurostimulator lead(s)"
+  },
+  {
+    "code":4.93,
+    "description":"Removal of peripheral neurostimulator lead(s)"
+  },
+  {
+    "code":5.25,
+    "description":"Periarterial sympathectomy"
+  },
+  {
+    "code":5.3,
+    "description":"Injection into sympathetic nerve or ganglion"
+  },
+  {
+    "code":5.39,
+    "description":"Other injection into sympathetic nerve or ganglion"
+  },
+  {
+    "code":6.11,
+    "description":"Closed (percutaneous) (needle) biopsy of thyroid gland"
+  },
+  {
+    "code":6.13,
+    "description":"Biopsy of parathyroid gland"
+  },
+  {
+    "code":6.3,
+    "description":"Other partial thyroidectomy"
+  },
+  {
+    "code":6.39,
+    "description":"Other partial thyroidectomy"
+  },
+  {
+    "code":6.4,
+    "description":"Complete thyroidectomy"
+  },
+  {
+    "code":6.6,
+    "description":"Excision of lingual thyroid"
+  },
+  {
+    "code":6.7,
+    "description":"Excision of thyroglossal duct or tract"
+  },
+  {
+    "code":6.8,
+    "description":"Parathyroidectomy"
+  },
+  {
+    "code":6.89,
+    "description":"Other parathyroidectomy"
+  },
+  {
+    "code":6.9,
+    "description":"Other operations on thyroid (region) and parathyroid"
+  },
+  {
+    "code":6.92,
+    "description":"Ligation of thyroid vessels"
+  },
+  {
+    "code":6.93,
+    "description":"Suture of thyroid gland"
+  },
+  {
+    "code":7.14,
+    "description":"Biopsy of pituitary gland, transsphenoidal approach"
+  },
+  {
+    "code":7.15,
+    "description":"Biopsy of pituitary gland, unspecified approach"
+  },
+  {
+    "code":7.2,
+    "description":"Partial adrenalectomy"
+  },
+  {
+    "code":7.62,
+    "description":"Partial excision of pituitary gland, transsphenoidal approach"
+  },
+  {
+    "code":7.63,
+    "description":"Partial excision of pituitary gland, unspecified approach"
+  },
+  {
+    "code":7.64,
+    "description":"Total excision of pituitary gland, transfrontal approach"
+  },
+  {
+    "code":7.65,
+    "description":"Total excision of pituitary gland, transsphenoidal approach"
+  },
+  {
+    "code":7.68,
+    "description":"Total excision of pituitary gland, other specified approach"
+  },
+  {
+    "code":8.01,
+    "description":"Incision of lid margin"
+  },
+  {
+    "code":9.73,
+    "description":"Repair of canaliculus"
+  },
+  {
+    "code":10.21,
+    "description":"Diagnostic procedures on conjunctiva - Biopsy"
+  },
+  {
+    "code":10.91,
+    "description":"Subconjunctival injection"
+  },
+  {
+    "code":11.21,
+    "description":"Scraping of cornea for smear or culture"
+  },
+  {
+    "code":11.5,
+    "description":"Repair of cornea"
+  },
+  {
+    "code":11.59,
+    "description":"Other repair of cornea"
+  },
+  {
+    "code":11.64,
+    "description":"Other penetrating keratoplasty"
+  },
+  {
+    "code":11.71,
+    "description":"Keratomeleusis"
+  },
+  {
+    "code":11.91,
+    "description":"Tattooing of cornea"
+  },
+  {
+    "code":12.14,
+    "description":"Other iridectomy"
+  },
+  {
+    "code":12.22,
+    "description":"Biopsy of iris"
+  },
+  {
+    "code":12.31,
+    "description":"Lysis of goniosynechiae"
+  },
+  {
+    "code":12.33,
+    "description":"Lysis of posterior synechiae"
+  },
+  {
+    "code":12.35,
+    "description":"Coreoplasty"
+  },
+  {
+    "code":12.53,
+    "description":"Goniotomy with goniopuncture"
+  },
+  {
+    "code":12.54,
+    "description":"Trabeculotomy ab externo"
+  },
+  {
+    "code":12.6,
+    "description":"Scleral fistulization"
+  },
+  {
+    "code":12.72,
+    "description":"Cyclocryotherapy"
+  },
+  {
+    "code":12.73,
+    "description":"Cyclophotocoagulation"
+  },
+  {
+    "code":12.8,
+    "description":"Operations on sclera"
+  },
+  {
+    "code":12.82,
+    "description":"Repair of scleral fistula"
+  },
+  {
+    "code":12.87,
+    "description":"Scleral reinforcement with graft"
+  },
+  {
+    "code":12.89,
+    "description":"Other operations on sclera"
+  },
+  {
+    "code":13.2,
+    "description":"Extracapsular extraction of lens by linear extraction technique"
+  },
+  {
+    "code":14.11,
+    "description":"Diagnostic aspiration of vitreous"
+  },
+  {
+    "code":14.41,
+    "description":"Scleral buckling with implant"
+  },
+  {
+    "code":14.73,
+    "description":"Mechanical vitrectomy by anterior approach"
+  },
+  {
+    "code":15.01,
+    "description":"Biopsy of extraocular muscle or tendon"
+  },
+  {
+    "code":15.09,
+    "description":"Other diagnostic procedures on extraocular muscles and tendons"
+  },
+  {
+    "code":15.2,
+    "description":"Other operations on one extraocular muscle"
+  },
+  {
+    "code":16.23,
+    "description":"Biopsy of eyeball and orbit"
+  },
+  {
+    "code":16.4,
+    "description":"Enucleation of eyeball"
+  },
+  {
+    "code":16.64,
+    "description":"Other revision of enucleation socket"
+  },
+  {
+    "code":17.1,
+    "description":"Laparoscopic unilateral repair of inguinal hernia"
+  },
+  {
+    "code":17.2,
+    "description":"Laparoscopic bilateral repair of inguinal hernia"
+  },
+  {
+    "code":17.3,
+    "description":"Laparoscopic partial excision of large intestine"
+  },
+  {
+    "code":17.34,
+    "description":"Laparoscopic resection of transverse colon"
+  },
+  {
+    "code":17.4,
+    "description":"Robotic assisted procedure"
+  },
+  {
+    "code":17.49,
+    "description":"Other and unspecified robotic assisted procedure"
+  },
+  {
+    "code":17.7,
+    "description":"Intravenous infusion"
+  },
+  {
+    "code":18.0,
+    "description":"Incision of external ear"
+  },
+  {
+    "code":18.01,
+    "description":"Piercing of ear lobe"
+  },
+  {
+    "code":18.02,
+    "description":"Incision of external auditory canal"
+  },
+  {
+    "code":18.09,
+    "description":"Other incision of external ear"
+  },
+  {
+    "code":18.1,
+    "description":"Diagnostic procedures on external ear"
+  },
+  {
+    "code":18.12,
+    "description":"Biopsy of external ear"
+  },
+  {
+    "code":18.19,
+    "description":"Other diagnostic procedures on external ear"
+  },
+  {
+    "code":18.2,
+    "description":"Excision or destruction of lesion of external ear"
+  },
+  {
+    "code":18.3,
+    "description":"Other excision of external ear"
+  },
+  {
+    "code":18.39,
+    "description":"Other excision of external ear"
+  },
+  {
+    "code":18.6,
+    "description":"Reconstruction of external auditory canal"
+  },
+  {
+    "code":18.79,
+    "description":"Other plastic repair of external ear"
+  },
+  {
+    "code":19.1,
+    "description":"Stapedectomy"
+  },
+  {
+    "code":19.11,
+    "description":"Stapedectomy with incus replacement"
+  },
+  {
+    "code":19.19,
+    "description":"Other stapedectomy"
+  },
+  {
+    "code":19.21,
+    "description":"Revision of stapedectomy with incus replacement"
+  },
+  {
+    "code":19.4,
+    "description":"Myringoplasty"
+  },
+  {
+    "code":19.52,
+    "description":"Type ii tympanoplasty"
+  },
+  {
+    "code":19.53,
+    "description":"Type iii tympanoplasty"
+  },
+  {
+    "code":19.54,
+    "description":"Type iv tympanoplasty"
+  },
+  {
+    "code":19.55,
+    "description":"Type v tympanoplasty"
+  },
+  {
+    "code":19.9,
+    "description":"Other repair of middle ear"
+  },
+  {
+    "code":20.0,
+    "description":"Myringotomy"
+  },
+  {
+    "code":20.09,
+    "description":"Other myringotomy"
+  },
+  {
+    "code":20.32,
+    "description":"Biopsy of middle and inner ear"
+  },
+  {
+    "code":20.41,
+    "description":"Simple mastoidectomy"
+  },
+  {
+    "code":20.42,
+    "description":"Radical mastoidectomy"
+  },
+  {
+    "code":20.51,
+    "description":"Excision of lesion of middle ear"
+  },
+  {
+    "code":20.6,
+    "description":"Fenestration of inner ear"
+  },
+  {
+    "code":20.61,
+    "description":"Fenestration of inner ear (initial)"
+  },
+  {
+    "code":20.62,
+    "description":"Revision of fenestration of inner ear"
+  },
+  {
+    "code":20.7,
+    "description":"Incision, excision, and destruction of inner ear"
+  },
+  {
+    "code":20.71,
+    "description":"Endolymphatic shunt"
+  },
+  {
+    "code":20.72,
+    "description":"Injection into inner ear"
+  },
+  {
+    "code":20.8,
+    "description":"Operations on eustachian tube"
+  },
+  {
+    "code":20.92,
+    "description":"Revision of mastoidectomy"
+  },
+  {
+    "code":20.93,
+    "description":"Repair of oval and round windows"
+  },
+  {
+    "code":20.94,
+    "description":"Injection of tympanum"
+  },
+  {
+    "code":21.01,
+    "description":"Control of epistaxis by anterior nasal packing"
+  },
+  {
+    "code":21.07,
+    "description":"Control of epistaxis by excision of nasal mucosa and skin grafting o"
+  },
+  {
+    "code":21.09,
+    "description":"Control of epistaxis by other means"
+  },
+  {
+    "code":21.21,
+    "description":"Rhinoscopy"
+  },
+  {
+    "code":21.22,
+    "description":"Biopsy of nose"
+  },
+  {
+    "code":21.3,
+    "description":"Excision or destruction of lesion of nose, not otherwise specified"
+  },
+  {
+    "code":21.32,
+    "description":"Local excision or destruction of other lesion of nose"
+  },
+  {
+    "code":21.5,
+    "description":"Submucous resection of nasal septum"
+  },
+  {
+    "code":21.71,
+    "description":"Closed reduction of nasal fracture"
+  },
+  {
+    "code":21.72,
+    "description":"Open reduction of nasal fracture"
+  },
+  {
+    "code":21.81,
+    "description":"Suture of laceration of nose"
+  },
+  {
+    "code":21.84,
+    "description":"Revision rhinoplasty"
+  },
+  {
+    "code":21.85,
+    "description":"Augmentation rhinoplasty"
+  },
+  {
+    "code":21.87,
+    "description":"Other rhinoplasty"
+  },
+  {
+    "code":22.0,
+    "description":"Aspiration and lavage of nasal sinus, not otherwise specified"
+  },
+  {
+    "code":22.41,
+    "description":"Frontal sinusotomy"
+  },
+  {
+    "code":22.42,
+    "description":"Frontal sinusectomy"
+  },
+  {
+    "code":22.6,
+    "description":"Other nasal sinusectomy"
+  },
+  {
+    "code":23.0,
+    "description":"Forceps extraction of tooth"
+  },
+  {
+    "code":23.11,
+    "description":"Removal of residual root"
+  },
+  {
+    "code":23.3,
+    "description":"Restoration of tooth by inlay"
+  },
+  {
+    "code":23.73,
+    "description":"Apicoectomy"
+  },
+  {
+    "code":25.01,
+    "description":"Closed (needle) biopsy of tongue"
+  },
+  {
+    "code":25.02,
+    "description":"Open biopsy of tongue"
+  },
+  {
+    "code":25.2,
+    "description":"Partial glossectomy"
+  },
+  {
+    "code":25.3,
+    "description":"Complete glossectomy"
+  },
+  {
+    "code":25.51,
+    "description":"Suture of laceration of tongue"
+  },
+  {
+    "code":25.91,
+    "description":"Lingual frenotomy"
+  },
+  {
+    "code":25.92,
+    "description":"Lingual frenectomy"
+  },
+  {
+    "code":26.3,
+    "description":"Sialoadenectomy"
+  },
+  {
+    "code":26.3,
+    "description":"Sialoadenectomy, not otherwise specified"
+  },
+  {
+    "code":26.32,
+    "description":"Complete sialoadenectomy"
+  },
+  {
+    "code":26.32,
+    "description":"Complete sialoadenectomy"
+  },
+  {
+    "code":26.41,
+    "description":"Suture of laceration of salivary gland"
+  },
+  {
+    "code":26.91,
+    "description":"Probing of salivary duct"
+  },
+  {
+    "code":27.1,
+    "description":"Incision of palate"
+  },
+  {
+    "code":27.51,
+    "description":"Suture of laceration of lip"
+  },
+  {
+    "code":27.52,
+    "description":"Suture of laceration of other part of mouth"
+  },
+  {
+    "code":27.53,
+    "description":"Closure of fistula of mouth"
+  },
+  {
+    "code":27.57,
+    "description":"Attachment of pedicle or flap graft to lip and mouth"
+  },
+  {
+    "code":27.59,
+    "description":"Other plastic repair of mouth"
+  },
+  {
+    "code":27.6,
+    "description":"Palatoplasty"
+  },
+  {
+    "code":27.69,
+    "description":"Other plastic repair of palate"
+  },
+  {
+    "code":27.71,
+    "description":"Incision of uvula"
+  },
+  {
+    "code":27.72,
+    "description":"Excision of uvula"
+  },
+  {
+    "code":28.2,
+    "description":"Tonsillectomy without adenoidectomy"
+  },
+  {
+    "code":28.5,
+    "description":"Excision of lingual tonsil"
+  },
+  {
+    "code":28.7,
+    "description":"Control of hemorrhage after tonsillectomy and adenoidectomy"
+  },
+  {
+    "code":28.92,
+    "description":"Excision of lesion of tonsil and adenoid"
+  },
+  {
+    "code":29.0,
+    "description":"Pharyngotomy"
+  },
+  {
+    "code":29.1,
+    "description":"Diagnostic procedures on pharynx"
+  },
+  {
+    "code":29.11,
+    "description":"Pharyngoscopy"
+  },
+  {
+    "code":29.12,
+    "description":"Pharyngeal biopsy"
+  },
+  {
+    "code":29.2,
+    "description":"Excision of branchial cleft cyst or vestige"
+  },
+  {
+    "code":29.31,
+    "description":"Cricopharyngeal myotomy"
+  },
+  {
+    "code":29.32,
+    "description":"Pharyngeal diverticulectomy"
+  },
+  {
+    "code":29.33,
+    "description":"Pharyngectomy (partial)"
+  },
+  {
+    "code":29.4,
+    "description":"Plastic operation on pharynx"
+  },
+  {
+    "code":29.51,
+    "description":"Suture of laceration of pharynx"
+  },
+  {
+    "code":29.53,
+    "description":"Closure of other fistula of pharynx"
+  },
+  {
+    "code":29.91,
+    "description":"Dilation of pharynx"
+  },
+  {
+    "code":30.0,
+    "description":"Excision or destruction of lesion or tissue of larynx"
+  },
+  {
+    "code":30.2,
+    "description":"Other partial laryngectomy"
+  },
+  {
+    "code":30.22,
+    "description":"Vocal cordectomy"
+  },
+  {
+    "code":30.29,
+    "description":"Other partial laryngectomy"
+  },
+  {
+    "code":30.3,
+    "description":"Complete laryngectomy"
+  },
+  {
+    "code":31.43,
+    "description":"Closed (endoscopic) biopsy of larynx"
+  },
+  {
+    "code":31.63,
+    "description":"Revision of laryngostomy"
+  },
+  {
+    "code":31.75,
+    "description":"Reconstruction of trachea and construction of artificial larynx"
+  },
+  {
+    "code":32.5,
+    "description":"Thoracoscopic pneumonectomy"
+  },
+  {
+    "code":33.22,
+    "description":"Fiber-optic bronchoscopy"
+  },
+  {
+    "code":33.24,
+    "description":"Closed (endoscopic) biopsy of bronchus"
+  },
+  {
+    "code":33.26,
+    "description":"Closed (percutaneous)(needle) biopsy of lung"
+  },
+  {
+    "code":33.34,
+    "description":"Thoracoplasty"
+  },
+  {
+    "code":33.51,
+    "description":"Uniteral lung transplantation"
+  },
+  {
+    "code":33.52,
+    "description":"Bilateral lung transplantation"
+  },
+  {
+    "code":33.91,
+    "description":"Bronchial dilation"
+  },
+  {
+    "code":34.1,
+    "description":"Incision of mediastinum"
+  },
+  {
+    "code":34.2,
+    "description":"Thoracoscopic pleural biopsy"
+  },
+  {
+    "code":34.21,
+    "description":"Transpleural thoracoscopy"
+  },
+  {
+    "code":34.22,
+    "description":"Mediastinoscopy"
+  },
+  {
+    "code":34.24,
+    "description":"Other pleural biopsy"
+  },
+  {
+    "code":34.5,
+    "description":"Pleurectomy"
+  },
+  {
+    "code":34.51,
+    "description":"Decortication of lung"
+  },
+  {
+    "code":34.84,
+    "description":"Other repair of diaphragm"
+  },
+  {
+    "code":34.91,
+    "description":"Thoracentesis"
+  },
+  {
+    "code":35.22,
+    "description":"Other replacement of aortic valve"
+  },
+  {
+    "code":35.52,
+    "description":"Repair of atrial septal defect with prosthesis, closed technique"
+  },
+  {
+    "code":35.71,
+    "description":"Other and unspecified repair of atrial septal defect"
+  },
+  {
+    "code":35.83,
+    "description":"Total repair of truncus arteriosus"
+  },
+  {
+    "code":36.06,
+    "description":"Insertion of non-drug -eluting coronary artery stent(s)"
+  },
+  {
+    "code":36.17,
+    "description":"Abdominal-coronary artery bypass"
+  },
+  {
+    "code":37.31,
+    "description":"Pericardiectomy"
+  },
+  {
+    "code":37.5,
+    "description":"Heart transplantation procedure"
+  },
+  {
+    "code":37.51,
+    "description":"Heart transplantation"
+  },
+  {
+    "code":37.8,
+    "description":"Insertion of permanent pacemaker, initial or replacement, type of device not specified"
+  },
+  {
+    "code":38.12,
+    "description":"Endarterectomy of other vessels of head and neck"
+  },
+  {
+    "code":38.24,
+    "description":"Intravascular imaging of coronary vessel(s) by optical coherence tomography [OCT]"
+  },
+  {
+    "code":38.25,
+    "description":"Intravascular imaging of non-coronary vessel(s) by optical coherence tomography [OCT]"
+  },
+  {
+    "code":38.3,
+    "description":"Resection of vessel with anastomosis, unspecified site"
+  },
+  {
+    "code":38.99,
+    "description":"Other puncture of vein"
+  },
+  {
+    "code":39.0,
+    "description":"Systemic to pulmonary artery shunt"
+  },
+  {
+    "code":39.26,
+    "description":"Other intra-abdominal vascular shunt or bypass"
+  },
+  {
+    "code":39.27,
+    "description":"Arteriovenostomy for renal dialysis"
+  },
+  {
+    "code":39.29,
+    "description":"Other (peripheral) vascular shunt or bypass"
+  },
+  {
+    "code":39.31,
+    "description":"Suture of artery"
+  },
+  {
+    "code":39.5,
+    "description":"Angioplasty or atherectomy of other non-coronary vessel(s)"
+  },
+  {
+    "code":39.51,
+    "description":"Clipping of aneurysm"
+  },
+  {
+    "code":39.65,
+    "description":"Extracorporeal membrane  oxygenation (ECMO)"
+  },
+  {
+    "code":39.8,
+    "description":"Operations on carotid body, carotid sinus  and other vascular bodies"
+  },
+  {
+    "code":39.95,
+    "description":"Hemodialysis"
+  },
+  {
+    "code":39.98,
+    "description":"Control of hemorrhage, not otherwise specified"
+  },
+  {
+    "code":40.23,
+    "description":"Excision of axillary lymph node"
+  },
+  {
+    "code":40.29,
+    "description":"Simple excision of other lymphatic structure"
+  },
+  {
+    "code":40.41,
+    "description":"Radical neck dissection, unilateral"
+  },
+  {
+    "code":40.42,
+    "description":"Radical neck dissection, bilateral"
+  },
+  {
+    "code":40.5,
+    "description":"Radical excision of other lymph nodes"
+  },
+  {
+    "code":40.5,
+    "description":"Radical excision of lymph nodes, not otherwise specified"
+  },
+  {
+    "code":41.04,
+    "description":"Autologous hematopoietic stem cell transplant without purging"
+  },
+  {
+    "code":41.1,
+    "description":"Puncture of spleen"
+  },
+  {
+    "code":41.38,
+    "description":"Other diagnostic procedures on bone marrow"
+  },
+  {
+    "code":41.39,
+    "description":"Other diagnostic procedures on spleen"
+  },
+  {
+    "code":42.0,
+    "description":"Esophagotomy"
+  },
+  {
+    "code":42.01,
+    "description":"Incision of esophageal web"
+  },
+  {
+    "code":42.1,
+    "description":"Esophagostomy"
+  },
+  {
+    "code":42.1,
+    "description":"Esophagostomy, not otherwise specified"
+  },
+  {
+    "code":42.24,
+    "description":"Closed (endoscopic) biopsy of esophagus"
+  },
+  {
+    "code":42.31,
+    "description":"Local excision of esophageal diverticulum"
+  },
+  {
+    "code":42.41,
+    "description":"Partial esophagectomy"
+  },
+  {
+    "code":42.52,
+    "description":"Intrathoracic esophagogastrostomy"
+  },
+  {
+    "code":42.7,
+    "description":"Esophagomyotomy"
+  },
+  {
+    "code":42.85,
+    "description":"Repair of esophageal stricture"
+  },
+  {
+    "code":42.91,
+    "description":"Ligation of esophageal varices"
+  },
+  {
+    "code":42.92,
+    "description":"Dilation of esophagus"
+  },
+  {
+    "code":42.99,
+    "description":"Other operations on esophagus"
+  },
+  {
+    "code":43.0,
+    "description":"Gastrotomy"
+  },
+  {
+    "code":43.1,
+    "description":"Gastrostomy"
+  },
+  {
+    "code":43.19,
+    "description":"Other gastrostomy"
+  },
+  {
+    "code":43.3,
+    "description":"Pyloromyotomy"
+  },
+  {
+    "code":43.6,
+    "description":"Partial gastrectomy with anastomosis to duodenum"
+  },
+  {
+    "code":43.7,
+    "description":"Partial gastrectomy with anastomosis to jejunum"
+  },
+  {
+    "code":43.89,
+    "description":"Other partial gastrectomy"
+  },
+  {
+    "code":43.99,
+    "description":"Other total gastrectomy"
+  },
+  {
+    "code":44.0,
+    "description":"Vagotomy"
+  },
+  {
+    "code":44.0,
+    "description":"Vagotomy, not otherwise specified"
+  },
+  {
+    "code":44.13,
+    "description":"Other gastroscopy"
+  },
+  {
+    "code":44.15,
+    "description":"Open biopsy of stomach"
+  },
+  {
+    "code":44.2,
+    "description":"Pyloroplasty"
+  },
+  {
+    "code":44.29,
+    "description":"Other pyloroplasty"
+  },
+  {
+    "code":44.32,
+    "description":"Percutaneous (endoscopic) gastojejunostomy"
+  },
+  {
+    "code":44.38,
+    "description":"Laparoscopic gastroenterostomy"
+  },
+  {
+    "code":44.64,
+    "description":"Gastropexy"
+  },
+  {
+    "code":45.14,
+    "description":"Closed biopsy of small intestine (endoscopic)"
+  },
+  {
+    "code":45.16,
+    "description":"Esophagogastroduodenoscopy (EGD) with closed biopsy"
+  },
+  {
+    "code":45.23,
+    "description":"Colonoscopy"
+  },
+  {
+    "code":45.25,
+    "description":"Closed (endoscopic) biopsy of large intestine"
+  },
+  {
+    "code":45.81,
+    "description":"Laparoscopic total intra-abdominal colectomy"
+  },
+  {
+    "code":46.1,
+    "description":"Colostomy"
+  },
+  {
+    "code":46.1,
+    "description":"Colostomy, not otherwise specified"
+  },
+  {
+    "code":46.32,
+    "description":"Percutaneous (endoscopic) jejunostomy (PEJ)"
+  },
+  {
+    "code":46.72,
+    "description":"Closure of fistula of duodenum"
+  },
+  {
+    "code":46.74,
+    "description":"Closure of fistula of small intestine, except duodenum"
+  },
+  {
+    "code":47.01,
+    "description":"Laparascopic appendectomy"
+  },
+  {
+    "code":47.2,
+    "description":"Drainage of appendiceal abscess"
+  },
+  {
+    "code":48.25,
+    "description":"Open biopsy of rectum"
+  },
+  {
+    "code":48.36,
+    "description":"(Endoscopic) polypectomy of rectum"
+  },
+  {
+    "code":48.4,
+    "description":"Pull-through resection of rectum, not otherwise specified"
+  },
+  {
+    "code":48.41,
+    "description":"Soave submucosal resection of rectum"
+  },
+  {
+    "code":48.52,
+    "description":"Open abdominoperineal resection of the rectum"
+  },
+  {
+    "code":48.65,
+    "description":"Duhamel resection of rectum"
+  },
+  {
+    "code":48.71,
+    "description":"Suture of laceration of rectum"
+  },
+  {
+    "code":48.79,
+    "description":"Other repair of rectum"
+  },
+  {
+    "code":49.01,
+    "description":"Incision of perianal abscess"
+  },
+  {
+    "code":49.12,
+    "description":"Anal fistulectomy"
+  },
+  {
+    "code":49.21,
+    "description":"Anoscopy"
+  },
+  {
+    "code":49.42,
+    "description":"Injection of hemorrhoids"
+  },
+  {
+    "code":49.46,
+    "description":"Excision of hemorrhoids"
+  },
+  {
+    "code":49.5,
+    "description":"Division of anal sphincter"
+  },
+  {
+    "code":49.59,
+    "description":"Other anal sphincterotomy"
+  },
+  {
+    "code":49.99,
+    "description":"Other operations on anus"
+  },
+  {
+    "code":50.5,
+    "description":"Liver transplant"
+  },
+  {
+    "code":50.59,
+    "description":"Other transplant of liver"
+  },
+  {
+    "code":51.03,
+    "description":"Other cholecystostomy"
+  },
+  {
+    "code":51.1,
+    "description":"Endoscopic retrograde cholangiopancreatography (ERCP)"
+  },
+  {
+    "code":51.23,
+    "description":"Laparoscopic cholecystectomy"
+  },
+  {
+    "code":51.3,
+    "description":"Anastomosis of gallbladder or bile duct"
+  },
+  {
+    "code":51.4,
+    "description":"Incision of bile duct for relief of obstruction"
+  },
+  {
+    "code":51.69,
+    "description":"Excision of other bile duct"
+  },
+  {
+    "code":51.7,
+    "description":"Repair of bile ducts"
+  },
+  {
+    "code":52.4,
+    "description":"Internal drainage of pancreatic cyst"
+  },
+  {
+    "code":52.51,
+    "description":"Proximal pancreatectomy"
+  },
+  {
+    "code":52.52,
+    "description":"Distal pancreatectomy"
+  },
+  {
+    "code":53.1,
+    "description":"Other bilateral repair of inguinal hernia"
+  },
+  {
+    "code":53.4,
+    "description":"Repair of umbilical hernia"
+  },
+  {
+    "code":53.49,
+    "description":"Other open umbilical herniorrhaphy"
+  },
+  {
+    "code":53.51,
+    "description":"Incisional hernia repair"
+  },
+  {
+    "code":53.7,
+    "description":"Repair of diaphragmatic hernia, abdominal approach"
+  },
+  {
+    "code":54.21,
+    "description":"Laparoscopy"
+  },
+  {
+    "code":54.23,
+    "description":"Biopsy of peritoneum"
+  },
+  {
+    "code":54.25,
+    "description":"Peritoneal lavage"
+  },
+  {
+    "code":54.3,
+    "description":"Excision or destruction of lesion or tissue of abdominal wall or umbilicus"
+  },
+  {
+    "code":54.6,
+    "description":"Suture of abdominal wall and peritoneum"
+  },
+  {
+    "code":54.7,
+    "description":"Other repair of abdominal wall and peritoneum"
+  },
+  {
+    "code":54.71,
+    "description":"Repair of gastroschisis"
+  },
+  {
+    "code":54.91,
+    "description":"Percutaneous abdominal drainage"
+  },
+  {
+    "code":55.11,
+    "description":"Pyelotomy"
+  },
+  {
+    "code":55.23,
+    "description":"Closed [percutaneous] [needle]  biopsy of kidney"
+  },
+  {
+    "code":55.4,
+    "description":"Partial nephrectomy"
+  },
+  {
+    "code":55.51,
+    "description":"Nephroureterectomy"
+  },
+  {
+    "code":55.6,
+    "description":"Transplant of kidney"
+  },
+  {
+    "code":55.69,
+    "description":"Other kidney transplantation"
+  },
+  {
+    "code":55.7,
+    "description":"Nephropexy"
+  },
+  {
+    "code":56.5,
+    "description":"Cutaneous uretero-ileostomy"
+  },
+  {
+    "code":56.7,
+    "description":"Other anastomosis or bypass of ureter"
+  },
+  {
+    "code":56.74,
+    "description":"Ureteroneocystostomy"
+  },
+  {
+    "code":56.79,
+    "description":"Other anastomosis or bypass of ureter"
+  },
+  {
+    "code":56.8,
+    "description":"Repair of ureter"
+  },
+  {
+    "code":56.89,
+    "description":"Other repair of ureter"
+  },
+  {
+    "code":57.11,
+    "description":"Percutaneous aspiration of bladder"
+  },
+  {
+    "code":57.17,
+    "description":"Percutaneous cystostomy"
+  },
+  {
+    "code":57.18,
+    "description":"Other suprapubic cystostomy"
+  },
+  {
+    "code":57.8,
+    "description":"Other repair of urinary bladder"
+  },
+  {
+    "code":57.82,
+    "description":"Closure of cystostomy"
+  },
+  {
+    "code":57.86,
+    "description":"Repair of bladder exstrophy"
+  },
+  {
+    "code":57.88,
+    "description":"Other anastomosis of bladder"
+  },
+  {
+    "code":57.9,
+    "description":"Other operations on bladder"
+  },
+  {
+    "code":57.94,
+    "description":"Insertion of indwelling urinary catheter"
+  },
+  {
+    "code":57.95,
+    "description":"Replacement of indwelling urinary catheter"
+  },
+  {
+    "code":58.22,
+    "description":"Other urethroscopy"
+  },
+  {
+    "code":58.39,
+    "description":"Other local excision or destruction of lesion or tissue of urethra"
+  },
+  {
+    "code":58.41,
+    "description":"Suture of laceration of urethra"
+  },
+  {
+    "code":58.44,
+    "description":"Reanastomosis of urethra"
+  },
+  {
+    "code":58.46,
+    "description":"Other reconstruction of urethra"
+  },
+  {
+    "code":58.6,
+    "description":"Dilation of urethra"
+  },
+  {
+    "code":59.7,
+    "description":"Other repair of urinary stress incontinence"
+  },
+  {
+    "code":60.4,
+    "description":"Retropubic prostatectomy"
+  },
+  {
+    "code":60.5,
+    "description":"Radical prostatectomy"
+  },
+  {
+    "code":61.42,
+    "description":"Repair of scrotal fistula"
+  },
+  {
+    "code":62.0,
+    "description":"Incision of testis"
+  },
+  {
+    "code":62.19,
+    "description":"Other diagnostic procedures on testes"
+  },
+  {
+    "code":62.5,
+    "description":"Orchiopexy"
+  },
+  {
+    "code":63.1,
+    "description":"Excision of varicocele and hydrocele of spermatic cord"
+  },
+  {
+    "code":63.52,
+    "description":"Reduction of torsion of testis or spermatic cord"
+  },
+  {
+    "code":63.73,
+    "description":"Vasectomy"
+  },
+  {
+    "code":63.83,
+    "description":"Epididymovasostomy"
+  },
+  {
+    "code":64.0,
+    "description":"Circumcision"
+  },
+  {
+    "code":64.11,
+    "description":"Biopsy of penis"
+  },
+  {
+    "code":64.3,
+    "description":"Amputation of penis"
+  },
+  {
+    "code":64.42,
+    "description":"Release of chordee"
+  },
+  {
+    "code":65.01,
+    "description":"Laparoscopic oophorotomy"
+  },
+  {
+    "code":65.24,
+    "description":"Laparoscopic wedge resection of ovary"
+  },
+  {
+    "code":65.25,
+    "description":"Other laparoscopic local excision or destruction of ovary"
+  },
+  {
+    "code":65.61,
+    "description":"Other removal of both ovaries and tubes at same operative episode"
+  },
+  {
+    "code":65.63,
+    "description":"Laparoscopic removal of both ovaries and tubes at the same operative episode"
+  },
+  {
+    "code":65.74,
+    "description":"Laparoscopic simple suture of ovary"
+  },
+  {
+    "code":66.2,
+    "description":"Bilateral endoscopic destruction or occlusion of fallopian tubes"
+  },
+  {
+    "code":66.22,
+    "description":"Bilateral endoscopic ligation and division of fallopian tubes"
+  },
+  {
+    "code":66.6,
+    "description":"Other salpingectomy"
+  },
+  {
+    "code":66.92,
+    "description":"Unilateral destruction or occlusion of fallopian tube"
+  },
+  {
+    "code":67.12,
+    "description":"Other cervical biopsy"
+  },
+  {
+    "code":67.4,
+    "description":"Amputation of cervix"
+  },
+  {
+    "code":67.51,
+    "description":"Transabdominal cerclage of cervix"
+  },
+  {
+    "code":67.61,
+    "description":"Suture of laceration of cervix"
+  },
+  {
+    "code":68.0,
+    "description":"Hysterotomy"
+  },
+  {
+    "code":68.22,
+    "description":"Incision or excision of congenital septum of uterus"
+  },
+  {
+    "code":68.22,
+    "description":"Incision or excision of congenital septum of uterus"
+  },
+  {
+    "code":68.23,
+    "description":"Endometrial ablation"
+  },
+  {
+    "code":68.3,
+    "description":"Subtotal abdominal hysterectomy"
+  },
+  {
+    "code":68.39,
+    "description":"Other and unspecified subtotal abdominal hysterectomy"
+  },
+  {
+    "code":68.41,
+    "description":"Laparoscopic total abdominal hysterectomy"
+  },
+  {
+    "code":68.5,
+    "description":"Vaginal hysterectomy"
+  },
+  {
+    "code":68.51,
+    "description":"Laparoscopically assisted vaginal hysterectomy LAVH"
+  },
+  {
+    "code":68.59,
+    "description":"Other and unspecified vaginal hysterectomy"
+  },
+  {
+    "code":68.6,
+    "description":"Radical abdominal hysterectomy"
+  },
+  {
+    "code":68.61,
+    "description":"Laparoscopic radical abdominal hysterectomy"
+  },
+  {
+    "code":68.7,
+    "description":"Radical vaginal hysterectomy"
+  },
+  {
+    "code":69.0,
+    "description":"Dilation and curettage of uterus"
+  },
+  {
+    "code":69.01,
+    "description":"Dilation and curettage for termination of pregnancy"
+  },
+  {
+    "code":69.02,
+    "description":"Dilation and curettage following delivery or abortion"
+  },
+  {
+    "code":69.09,
+    "description":"Other dilation and curettage of uterus"
+  },
+  {
+    "code":69.23,
+    "description":"Vaginal repair of chronic inversion of uterus"
+  },
+  {
+    "code":69.3,
+    "description":"Paracervical uterine denervation"
+  },
+  {
+    "code":69.51,
+    "description":"Aspiration curettage of uterus for termination of pregnancy"
+  },
+  {
+    "code":69.92,
+    "description":"Artificial insemination"
+  },
+  {
+    "code":69.93,
+    "description":"Insertion of laminaria"
+  },
+  {
+    "code":69.94,
+    "description":"Manual replacement of inverted uterus"
+  },
+  {
+    "code":70.0,
+    "description":"Culdocentesis"
+  },
+  {
+    "code":70.13,
+    "description":"Lysis of intraluminal adhesions of vagina"
+  },
+  {
+    "code":70.24,
+    "description":"Vaginal biopsy"
+  },
+  {
+    "code":70.3,
+    "description":"Local excision or destruction of vagina and cul-de-sac"
+  },
+  {
+    "code":70.4,
+    "description":"Obliteration and total excision of vagina"
+  },
+  {
+    "code":70.51,
+    "description":"Repair of cystocele"
+  },
+  {
+    "code":70.62,
+    "description":"Vaginal reconstruction"
+  },
+  {
+    "code":70.73,
+    "description":"Repair of rectovaginal fistula"
+  },
+  {
+    "code":70.76,
+    "description":"Hymenorrhaphy"
+  },
+  {
+    "code":71.11,
+    "description":"Biopsy of vulva"
+  },
+  {
+    "code":71.23,
+    "description":"Marsupialization of Bartholin's gland (cyst)"
+  },
+  {
+    "code":71.24,
+    "description":"Excision or other destruction of Bartholin's gland (cyst)"
+  },
+  {
+    "code":71.4,
+    "description":"Operations on clitoris"
+  },
+  {
+    "code":71.5,
+    "description":"Radical vulvectomy"
+  },
+  {
+    "code":71.6,
+    "description":"Other vulvectomy"
+  },
+  {
+    "code":71.71,
+    "description":"Suture of laceration of vulva or perineum"
+  },
+  {
+    "code":71.79,
+    "description":"Other repair of vulva and perineum"
+  },
+  {
+    "code":72.4,
+    "description":"Forceps rotation of fetal head"
+  },
+  {
+    "code":72.7,
+    "description":"Vacuum extraction"
+  },
+  {
+    "code":72.79,
+    "description":"Other vacuum extraction"
+  },
+  {
+    "code":73.4,
+    "description":"Medical induction of labor"
+  },
+  {
+    "code":74.2,
+    "description":"Extraperitoneal cesarean section"
+  },
+  {
+    "code":74.4,
+    "description":"Cesarean section of other specified type"
+  },
+  {
+    "code":74.99,
+    "description":"Other cesarean section of unspecified type"
+  },
+  {
+    "code":75.2,
+    "description":"Intrauterine transfusion"
+  },
+  {
+    "code":75.32,
+    "description":"Fetal EKG (scalp)"
+  },
+  {
+    "code":75.61,
+    "description":"Repair of current obstetric laceration of bladder and urethra"
+  },
+  {
+    "code":75.93,
+    "description":"Surgical correction of inverted uterus"
+  },
+  {
+    "code":75.93,
+    "description":"Surgical correction of inverted uterus"
+  },
+  {
+    "code":76.31,
+    "description":"Partial mandibulectomy"
+  },
+  {
+    "code":76.41,
+    "description":"Total mandibulectomy with synchronous reconstruction"
+  },
+  {
+    "code":76.42,
+    "description":"Other total mandibulectomy"
+  },
+  {
+    "code":76.5,
+    "description":"Temporomandibular arthroplasty"
+  },
+  {
+    "code":76.64,
+    "description":"Other orthognathic surgery on mandible"
+  },
+  {
+    "code":76.73,
+    "description":"Closed reduction of maxillary fracture"
+  },
+  {
+    "code":76.74,
+    "description":"Open reduction of maxillary fracture"
+  },
+  {
+    "code":76.75,
+    "description":"Closed reduction of mandibular fracture"
+  },
+  {
+    "code":76.76,
+    "description":"Open reduction of mandibular fracture"
+  },
+  {
+    "code":76.77,
+    "description":"Open reduction of alveolar fracture"
+  },
+  {
+    "code":76.96,
+    "description":"Injection of therapeutic substance into temporomandibular joint"
+  },
+  {
+    "code":77.0,
+    "description":"Sequestrectomy"
+  },
+  {
+    "code":77.0,
+    "description":"Sequestrectomy, unspecified site"
+  },
+  {
+    "code":77.07,
+    "description":"Sequestrectomy of tibia and fibula"
+  },
+  {
+    "code":77.09,
+    "description":"Sequestrectomy of other bone"
+  },
+  {
+    "code":78.23,
+    "description":"Limb shortening procedures, radius and ulna"
+  },
+  {
+    "code":78.24,
+    "description":"Limb shortening procedures, carpals and metacarpals"
+  },
+  {
+    "code":78.25,
+    "description":"Limb shortening procedures, femur"
+  },
+  {
+    "code":78.3,
+    "description":"Limb lengthening procedures"
+  },
+  {
+    "code":78.5,
+    "description":"Internal fixation of bone without fracture reduction"
+  },
+  {
+    "code":78.5,
+    "description":"Internal fixation of bone without fracture reduction, unspecified site"
+  },
+  {
+    "code":78.51,
+    "description":"Internal fixation of bone without fracture reduction on scapula, clavicle, and thorax (ribs and sternum)"
+  },
+  {
+    "code":78.53,
+    "description":"Internal fixation of bone without fracture reduction on radius and ulna"
+  },
+  {
+    "code":79.0,
+    "description":"Closed reduction of fracture without internal fixation, unspecified site"
+  },
+  {
+    "code":79.11,
+    "description":"Closed reduction of fracture with internal fixation, humerus"
+  },
+  {
+    "code":79.12,
+    "description":"Closed reduction of fracture with internal fixation, radius and ulna"
+  },
+  {
+    "code":79.32,
+    "description":"Open reduction of fracture with internal fixation, radius and ulna"
+  },
+  {
+    "code":79.6,
+    "description":"Debridement of open fracture site"
+  },
+  {
+    "code":79.6,
+    "description":"Debridement of open fracture, unspecified site"
+  },
+  {
+    "code":79.62,
+    "description":"Debridement of open fracture of radius and ulna"
+  },
+  {
+    "code":79.69,
+    "description":"Debridement of open fracture of other specified bone"
+  },
+  {
+    "code":80.59,
+    "description":"Other destruction of intervertebral disc"
+  },
+  {
+    "code":80.7,
+    "description":"Synovectomy"
+  },
+  {
+    "code":80.7,
+    "description":"Synovectomy, unspecified site"
+  },
+  {
+    "code":81.01,
+    "description":"Atlas-axis spinal fusion"
+  },
+  {
+    "code":81.04,
+    "description":"Dorsal and dorsolumbar fusion, anterior technique"
+  },
+  {
+    "code":81.21,
+    "description":"Arthrodesis of hip"
+  },
+  {
+    "code":81.23,
+    "description":"Arthrodesis of shoulder"
+  },
+  {
+    "code":81.27,
+    "description":"Metacarpophalangeal fusion"
+  },
+  {
+    "code":81.28,
+    "description":"Interphalangeal fusion"
+  },
+  {
+    "code":81.38,
+    "description":"Refuison of lumbar and lumbosacral spine, posterior technique"
+  },
+  {
+    "code":81.51,
+    "description":"Total hip replacement"
+  },
+  {
+    "code":81.54,
+    "description":"Total knee replacement"
+  },
+  {
+    "code":81.66,
+    "description":"Percutaneous vertebral augmentation"
+  },
+  {
+    "code":81.74,
+    "description":"Arthroplasty of carpocarpal or carpometacarpal joint with implant"
+  },
+  {
+    "code":81.84,
+    "description":"Total elbow replacement"
+  },
+  {
+    "code":81.92,
+    "description":"Injection of therapeutic substance into joint or ligament"
+  },
+  {
+    "code":82.11,
+    "description":"Tenotomy of hand"
+  },
+  {
+    "code":82.21,
+    "description":"Excision of lesion of tendon sheath of hand"
+  },
+  {
+    "code":82.69,
+    "description":"Other reconstruction of thumb"
+  },
+  {
+    "code":82.69,
+    "description":"Other reconstruction of thumb"
+  },
+  {
+    "code":82.69,
+    "description":"Other reconstruction of thumb"
+  },
+  {
+    "code":82.69,
+    "description":"Other reconstruction of thumb"
+  },
+  {
+    "code":82.84,
+    "description":"Repair of mallet finger"
+  },
+  {
+    "code":82.92,
+    "description":"Aspiration of bursa of hand"
+  },
+  {
+    "code":83.01,
+    "description":"Exploration of tendon sheath"
+  },
+  {
+    "code":83.13,
+    "description":"Other tenotomy"
+  },
+  {
+    "code":83.14,
+    "description":"Fasciotomy"
+  },
+  {
+    "code":83.14,
+    "description":"Fasciotomy"
+  },
+  {
+    "code":83.2,
+    "description":"Diagnostic procedures on muscle, tendon, fascia, and bursa, including that of hand"
+  },
+  {
+    "code":83.29,
+    "description":"Other diagnostic procedures on muscle, tendon, fascia, and bursa, including that of hand"
+  },
+  {
+    "code":83.88,
+    "description":"Other plastic operations on tendon"
+  },
+  {
+    "code":83.94,
+    "description":"Aspiration of bursa"
+  },
+  {
+    "code":83.97,
+    "description":"Injection of therapeutic substance into tendon"
+  },
+  {
+    "code":84.01,
+    "description":"Amputation and disarticulation of finger"
+  },
+  {
+    "code":84.02,
+    "description":"Amputation and disarticulation of thumb"
+  },
+  {
+    "code":84.03,
+    "description":"Amputation through hand"
+  },
+  {
+    "code":84.05,
+    "description":"Amputation through forearm"
+  },
+  {
+    "code":84.08,
+    "description":"Disarticulation of shoulder"
+  },
+  {
+    "code":84.11,
+    "description":"Amputation of toe"
+  },
+  {
+    "code":84.15,
+    "description":"Other amputation below knee"
+  },
+  {
+    "code":84.16,
+    "description":"Disarticulation of knee"
+  },
+  {
+    "code":84.17,
+    "description":"Amputation above knee"
+  },
+  {
+    "code":84.18,
+    "description":"Disarticulation of hip"
+  },
+  {
+    "code":84.4,
+    "description":"Implantation or fitting of prosthetic limb device"
+  },
+  {
+    "code":84.4,
+    "description":"Implantation or fitting of prosthetic limb device, not otherwise specified"
+  },
+  {
+    "code":84.43,
+    "description":"Fitting of prosthesis of arm, not otherwise specified"
+  },
+  {
+    "code":84.47,
+    "description":"Fitting of prosthesis of leg, not otherwise specified"
+  },
+  {
+    "code":84.92,
+    "description":"Separation of equal conjoined twins"
+  },
+  {
+    "code":84.93,
+    "description":"Separation of unequal conjoined twins"
+  },
+  {
+    "code":85.31,
+    "description":"Unilateral reduction mammoplasty"
+  },
+  {
+    "code":85.32,
+    "description":"Bilateral reduction mammoplasty"
+  },
+  {
+    "code":85.34,
+    "description":"Other unilateral subcutaneous mammectomy"
+  },
+  {
+    "code":85.36,
+    "description":"Other bilateral subcutaneous mammectomy"
+  },
+  {
+    "code":85.44,
+    "description":"Bilateral extended simple mastectomy"
+  },
+  {
+    "code":85.46,
+    "description":"Bilateral radical mastectomy"
+  },
+  {
+    "code":85.47,
+    "description":"Unilateral extended radical mastectomy"
+  },
+  {
+    "code":85.5,
+    "description":"Augmentation mammoplasty"
+  },
+  {
+    "code":85.5,
+    "description":"Augmentation mammoplasty"
+  },
+  {
+    "code":85.5,
+    "description":"Augmentation mammoplasty, not otherwise specified"
+  },
+  {
+    "code":85.51,
+    "description":"Unilateral injection into breast for augmentation"
+  },
+  {
+    "code":85.53,
+    "description":"Unilateral breast implant"
+  },
+  {
+    "code":85.54,
+    "description":"Bilateral breast implant"
+  },
+  {
+    "code":85.55,
+    "description":"Fat graft to breast"
+  },
+  {
+    "code":85.6,
+    "description":"Mastopexy"
+  },
+  {
+    "code":85.79,
+    "description":"Other total reconstruction of breast"
+  },
+  {
+    "code":85.83,
+    "description":"Full-thickness graft to breast"
+  },
+  {
+    "code":86.06,
+    "description":"Insertion of totally implantable infusion pump"
+  },
+  {
+    "code":86.07,
+    "description":"Insertion of totally implantable vascular access device (vad)"
+  },
+  {
+    "code":86.21,
+    "description":"Excision of pilonidal cyst or sinus"
+  },
+  {
+    "code":86.23,
+    "description":"Removal of nail, nailbed, or nail fold"
+  },
+  {
+    "code":86.28,
+    "description":"Nonexcisional debridement of wound, infection, or burn"
+  },
+  {
+    "code":86.6,
+    "description":"Free skin graft"
+  },
+  {
+    "code":86.6,
+    "description":"Free skin graft, not otherwise specified"
+  },
+  {
+    "code":86.63,
+    "description":"Full-thickness skin graft to other sites"
+  },
+  {
+    "code":86.64,
+    "description":"Hair transplant"
+  },
+  {
+    "code":86.65,
+    "description":"Heterograft to skin"
+  },
+  {
+    "code":86.66,
+    "description":"Homograft to skin"
+  },
+  {
+    "code":86.83,
+    "description":"Size reduction plastic operation"
+  },
+  {
+    "code":86.85,
+    "description":"Correction of syndactyly"
+  },
+  {
+    "code":86.91,
+    "description":"Excision of skin for graft"
+  },
+  {
+    "code":86.93,
+    "description":"Insertion of tissue expander"
+  },
+  {
+    "code":86.94,
+    "description":"Insertion or replacement of singer array neurostimulator pulse generator, not specified as rechargeable"
+  },
+  {
+    "code":86.95,
+    "description":"Insertion or replacement of dual array neurostimulator pulse generator, not specified as rechargeable"
+  },
+  {
+    "code":86.96,
+    "description":"Insertion or replacement of other neurostimulator pulse generator"
+  },
+  {
+    "code":87.11,
+    "description":"Full-mouth x-ray of teeth"
+  },
+  {
+    "code":87.12,
+    "description":"Other dental x-ray"
+  },
+  {
+    "code":87.13,
+    "description":"Temporomandibular contrast arthrogram"
+  },
+  {
+    "code":87.16,
+    "description":"Other x-ray of facial bones"
+  },
+  {
+    "code":87.29,
+    "description":"Other x-ray of spine"
+  },
+  {
+    "code":87.32,
+    "description":"Other contrast bronchogram"
+  },
+  {
+    "code":87.37,
+    "description":"Other mammography"
+  },
+  {
+    "code":87.49,
+    "description":"Other chest x-ray"
+  },
+  {
+    "code":87.54,
+    "description":"Other cholangiogram"
+  },
+  {
+    "code":87.61,
+    "description":"Barium swallow"
+  },
+  {
+    "code":87.76,
+    "description":"Retrograde cystourethrogram"
+  },
+  {
+    "code":87.77,
+    "description":"Other cystogram"
+  },
+  {
+    "code":87.78,
+    "description":"Ileal conduitogram"
+  },
+  {
+    "code":88.25,
+    "description":"Pelvimetry"
+  },
+  {
+    "code":88.31,
+    "description":"Skeletal series"
+  },
+  {
+    "code":88.42,
+    "description":"Aortography"
+  },
+  {
+    "code":88.49,
+    "description":"Arteriography of other specified sites"
+  },
+  {
+    "code":88.57,
+    "description":"Other and unspecified coronary arteriography"
+  },
+  {
+    "code":88.7,
+    "description":"Diagnostic ultrasound"
+  },
+  {
+    "code":88.71,
+    "description":"Diagnostic ultrasound of head and neck"
+  },
+  {
+    "code":88.72,
+    "description":"Diagnostic ultrasound of heart"
+  },
+  {
+    "code":88.74,
+    "description":"Diagnostic ultrasound of digestive system"
+  },
+  {
+    "code":88.76,
+    "description":"Diagnostic ultrasound of abdomen and retroperitoneum"
+  },
+  {
+    "code":89.0,
+    "description":"Diagnostic interview, consultation, and evaluation"
+  },
+  {
+    "code":89.08,
+    "description":"Other consultation"
+  },
+  {
+    "code":89.09,
+    "description":"Consultation, not otherwise specified"
+  },
+  {
+    "code":89.12,
+    "description":"Nasal function study"
+  },
+  {
+    "code":89.13,
+    "description":"Neurologic examination"
+  },
+  {
+    "code":89.19,
+    "description":"Video and radio-telemetered electroencephalographic monitoring"
+  },
+  {
+    "code":89.22,
+    "description":"Cystometrogram"
+  },
+  {
+    "code":89.24,
+    "description":"Uroflowmetry (UFR)"
+  },
+  {
+    "code":89.25,
+    "description":"Urethral pressure profile (UPP)"
+  },
+  {
+    "code":89.32,
+    "description":"Esophageal manometry"
+  },
+  {
+    "code":89.34,
+    "description":"Digital examination of rectum"
+  },
+  {
+    "code":89.43,
+    "description":"Cardiovascular stress test using bicycle ergometer"
+  },
+  {
+    "code":89.51,
+    "description":"Rhythm electrocardiogram"
+  },
+  {
+    "code":89.52,
+    "description":"Electrocardiogram"
+  },
+  {
+    "code":89.58,
+    "description":"Plethysmogram"
+  },
+  {
+    "code":89.62,
+    "description":"Central venous pressure monitoring"
+  },
+  {
+    "code":89.63,
+    "description":"Pulmonary artery pressure monitoring"
+  },
+  {
+    "code":89.64,
+    "description":"Pulmonary artery wedge monitoring"
+  },
+  {
+    "code":89.65,
+    "description":"Measurement of systemic arterial blood gases"
+  },
+  {
+    "code":89.66,
+    "description":"Measurement of mixed venous blood gases"
+  },
+  {
+    "code":90.09,
+    "description":"Microscopic examination of specimen from nervous system and of spina fluid, Other microscopic examination"
+  },
+  {
+    "code":92.01,
+    "description":"Thyroid scan and radioisotope function studies"
+  },
+  {
+    "code":92.02,
+    "description":"Liver scan and radioisotope function study"
+  },
+  {
+    "code":92.03,
+    "description":"Renal scan and radioisotope function study"
+  },
+  {
+    "code":92.13,
+    "description":"Parathyroid scan"
+  },
+  {
+    "code":92.15,
+    "description":"Pulmonary scan"
+  },
+  {
+    "code":92.3,
+    "description":"Stereotactic radiosurgery"
+  },
+  {
+    "code":92.3,
+    "description":"Stereotactic radiosurgery, not otherwise specified"
+  },
+  {
+    "code":92.39,
+    "description":"Stereotactic radiosugery, not elsewhere classified"
+  },
+  {
+    "code":93.02,
+    "description":"Orthotic evaluation"
+  },
+  {
+    "code":93.03,
+    "description":"Prosthetic evaluation"
+  },
+  {
+    "code":93.15,
+    "description":"Mobilization of spine"
+  },
+  {
+    "code":93.16,
+    "description":"Mobilization of other joints"
+  },
+  {
+    "code":93.18,
+    "description":"Breathing exercise"
+  },
+  {
+    "code":93.23,
+    "description":"Fitting of orthotic device"
+  },
+  {
+    "code":93.27,
+    "description":"Stretching of muscle or tendon"
+  },
+  {
+    "code":93.28,
+    "description":"Stretching of fascia"
+  },
+  {
+    "code":93.29,
+    "description":"Other forcible correction of deformity"
+  },
+  {
+    "code":93.32,
+    "description":"Whirlpool treatment"
+  },
+  {
+    "code":93.33,
+    "description":"Other hydrotherapy"
+  },
+  {
+    "code":93.5,
+    "description":"Other immobilization, pressure, and attention to wound"
+  },
+  {
+    "code":93.51,
+    "description":"Application of plaster jacket"
+  },
+  {
+    "code":93.53,
+    "description":"Application of other cast"
+  },
+  {
+    "code":93.6,
+    "description":"Osteopathic manipulative treatment"
+  },
+  {
+    "code":93.61,
+    "description":"Osteopathic manipulative treatment for general mobilization"
+  },
+  {
+    "code":93.62,
+    "description":"Osteopathic manipulative treatment using high-velocity, low-amplitude forces"
+  },
+  {
+    "code":93.64,
+    "description":"Osteopathic manipulative treatment using isotonic, isometric forces"
+  },
+  {
+    "code":93.71,
+    "description":"Dyslexia training"
+  },
+  {
+    "code":93.72,
+    "description":"Dysphasia training"
+  },
+  {
+    "code":93.72,
+    "description":"Dysphasia training"
+  },
+  {
+    "code":93.73,
+    "description":"Esophageal speech training"
+  },
+  {
+    "code":93.74,
+    "description":"Speech defect training"
+  },
+  {
+    "code":93.75,
+    "description":"Other speech training and therapy"
+  },
+  {
+    "code":93.81,
+    "description":"Recreational therapy"
+  },
+  {
+    "code":93.84,
+    "description":"Music therapy"
+  },
+  {
+    "code":93.85,
+    "description":"Vocational rehabilitation"
+  },
+  {
+    "code":93.9,
+    "description":"Non-invasive mechanical ventilation"
+  },
+  {
+    "code":93.94,
+    "description":"Respiratory medication administered by nebulizer"
+  },
+  {
+    "code":93.96,
+    "description":"Other oxygen enrichment"
+  },
+  {
+    "code":94.0,
+    "description":"Psychologic evaluation and testing"
+  },
+  {
+    "code":94.01,
+    "description":"Administration of intelligence test"
+  },
+  {
+    "code":94.02,
+    "description":"Administration of psychologic test"
+  },
+  {
+    "code":94.03,
+    "description":"Character analysis"
+  },
+  {
+    "code":94.13,
+    "description":"Psychiatric commitment evaluation"
+  },
+  {
+    "code":94.19,
+    "description":"Other psychiatric interview and evaluation"
+  },
+  {
+    "code":94.2,
+    "description":"Psychiatric somatotherapy"
+  },
+  {
+    "code":94.23,
+    "description":"Neuroleptic therapy"
+  },
+  {
+    "code":94.3,
+    "description":"Individual psychotherapy"
+  },
+  {
+    "code":94.31,
+    "description":"Psychoanalysis"
+  },
+  {
+    "code":94.34,
+    "description":"Individual therapy for psychosexual dysfunction"
+  },
+  {
+    "code":94.35,
+    "description":"Crisis intervention"
+  },
+  {
+    "code":94.36,
+    "description":"Play psychotherapy"
+  },
+  {
+    "code":94.37,
+    "description":"Exploratory verbal psychotherapy"
+  },
+  {
+    "code":94.38,
+    "description":"Supportive verbal psychotherapy"
+  },
+  {
+    "code":94.39,
+    "description":"Other individual psychotherapy"
+  },
+  {
+    "code":94.41,
+    "description":"Group therapy for psychosexual dysfunction"
+  },
+  {
+    "code":94.42,
+    "description":"Family therapy"
+  },
+  {
+    "code":94.43,
+    "description":"Psychodrama"
+  },
+  {
+    "code":94.44,
+    "description":"Other group therapy"
+  },
+  {
+    "code":94.49,
+    "description":"Other counselling"
+  },
+  {
+    "code":94.51,
+    "description":"Referral for psychotherapy"
+  },
+  {
+    "code":94.64,
+    "description":"Drug rehabilitation"
+  },
+  {
+    "code":94.65,
+    "description":"Drug detoxification"
+  },
+  {
+    "code":94.67,
+    "description":"Combined alcohol and drug rehabilitation"
+  },
+  {
+    "code":95.04,
+    "description":"Eye examination under anesthesia"
+  },
+  {
+    "code":95.11,
+    "description":"Fundus photography"
+  },
+  {
+    "code":95.13,
+    "description":"Ultrasound study of eye"
+  },
+  {
+    "code":95.25,
+    "description":"Electromyogram of eye (EMG)"
+  },
+  {
+    "code":95.47,
+    "description":"Hearing examination, not otherwise specified"
+  },
+  {
+    "code":95.48,
+    "description":"Fitting of hearing aid"
+  },
+  {
+    "code":96.02,
+    "description":"Insertion of oropharyngeal airway"
+  },
+  {
+    "code":96.04,
+    "description":"Insertion of endotracheal tube"
+  },
+  {
+    "code":96.05,
+    "description":"Other intubation of respiratory tract"
+  },
+  {
+    "code":96.07,
+    "description":"Insertion of other (naso-)gastric tube"
+  },
+  {
+    "code":96.08,
+    "description":"Insertion of (naso-)intestinal tube"
+  },
+  {
+    "code":96.15,
+    "description":"Insertion of vaginal mold"
+  },
+  {
+    "code":96.16,
+    "description":"Other vaginal dilation"
+  },
+  {
+    "code":96.18,
+    "description":"Insertion of other vaginal pessary"
+  },
+  {
+    "code":96.21,
+    "description":"Dilation of frontonasal duct"
+  },
+  {
+    "code":96.33,
+    "description":"Gastric lavage"
+  },
+  {
+    "code":96.35,
+    "description":"Gastric gavage"
+  },
+  {
+    "code":96.38,
+    "description":"Removal of impacted feces"
+  },
+  {
+    "code":96.39,
+    "description":"Other transanal enema"
+  },
+  {
+    "code":96.42,
+    "description":"Irrigation of pancreatic tube"
+  },
+  {
+    "code":96.45,
+    "description":"Irrigation of nephrostomy and pyelostomy"
+  },
+  {
+    "code":96.52,
+    "description":"Irrigation of ear"
+  },
+  {
+    "code":96.53,
+    "description":"Irrigation of nasal passages"
+  },
+  {
+    "code":96.6,
+    "description":"Enteral infusion of concentrated nutritional substances"
+  },
+  {
+    "code":97.32,
+    "description":"Removal of nasal packing"
+  },
+  {
+    "code":97.36,
+    "description":"Removal of other external mandibular fixation device"
+  },
+  {
+    "code":97.37,
+    "description":"Removal of tracheostomy tube"
+  },
+  {
+    "code":97.41,
+    "description":"Removal of thoracotomy tube or pleural cavity drain"
+  },
+  {
+    "code":97.55,
+    "description":"Removal of t-tube, other bile duct tube, or liver tube"
+  },
+  {
+    "code":97.61,
+    "description":"Removal of pyelostomy and nephrostomy tube"
+  },
+  {
+    "code":97.62,
+    "description":"Removal of ureterostomy tube and ureteral catheter"
+  },
+  {
+    "code":97.63,
+    "description":"Removal of cystostomy tube"
+  },
+  {
+    "code":97.64,
+    "description":"Removal of other urinary drainage device"
+  },
+  {
+    "code":97.65,
+    "description":"Removal of urethral stent"
+  },
+  {
+    "code":97.74,
+    "description":"Removal of other vaginal pessary"
+  },
+  {
+    "code":97.8,
+    "description":"Other nonoperative removal of therapeutic device"
+  },
+  {
+    "code":97.82,
+    "description":"Removal of peritoneal drainage device"
+  },
+  {
+    "code":97.83,
+    "description":"Removal of abdominal wall sutures"
+  },
+  {
+    "code":97.85,
+    "description":"Removal of packing from trunk, not elsewhere classified"
+  },
+  {
+    "code":97.89,
+    "description":"Removal of other therapeutic device"
+  },
+  {
+    "code":98.5,
+    "description":"Extracorporeal shockwave lithotripsy (ESWL)"
+  },
+  {
+    "code":98.51,
+    "description":"Extracorporeal shockwave lithotripsy (ESWL) of the kidney, ureter and\/or bladder"
+  },
+  {
+    "code":99.0,
+    "description":"Transfusion of blood and blood components"
+  },
+  {
+    "code":99.02,
+    "description":"Transfusion of previously collected autologous blood"
+  },
+  {
+    "code":99.06,
+    "description":"Transfusion of coagulation factors"
+  },
+  {
+    "code":99.1,
+    "description":"Injection or infusion of thrombolytic agent"
+  },
+  {
+    "code":99.14,
+    "description":"Injection or infusion of gamma globulin"
+  },
+  {
+    "code":99.23,
+    "description":"Injection of steroid"
+  },
+  {
+    "code":99.27,
+    "description":"Iontophoresis"
+  },
+  {
+    "code":99.6,
+    "description":"Cardiopulmonary resuscitation, not otherwise specified"
+  },
+  {
+    "code":99.62,
+    "description":"Other electric countershock of heart"
+  },
+  {
+    "code":99.71,
+    "description":"Therapeutic plasmapheresis"
+  },
+  {
+    "code":99.72,
+    "description":"Therapeutic leukopheresis"
+  },
+  {
+    "code":99.85,
+    "description":"Hyperthermia for treatment of cancer"
+  },
+  {
+    "code":99.91,
+    "description":"Acupuncture for anesthesia"
+  },
+  {
+    "code":99.94,
+    "description":"Prostatic massage"
+  },
+  {
+    "code":99.96,
+    "description":"Collection of sperm for artificial insemination"
+  }
+]

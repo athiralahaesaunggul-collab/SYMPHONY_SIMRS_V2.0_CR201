@@ -1,0 +1,6 @@
+{
+  "name": "Symphony SIMRS v2.0",
+  "description": "Prototipe Rekam Medis Elektronik (RME) hybrid Universitas Esa Unggul dengan Modul Admisi, SOAP Klinis, Koding ICD-10 dengan CDSS, Pelacakan Berkas, dan Dasbor Biostatistik.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

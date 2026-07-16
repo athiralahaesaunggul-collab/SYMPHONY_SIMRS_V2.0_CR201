@@ -1,0 +1,116 @@
+{
+  "entities": {
+    "Patient": {
+      "title": "Patient",
+      "description": "Patient registration and queue status information",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "rmNumber": { "type": "string" },
+        "name": { "type": "string" },
+        "nik": { "type": "string" },
+        "birthDate": { "type": "string" },
+        "gender": { "type": "string" },
+        "insurance": { "type": "string" },
+        "clinic": { "type": "string" },
+        "age": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "rmNumber", "name", "nik", "birthDate", "gender", "insurance", "clinic", "age", "status", "createdAt"]
+    },
+    "SOAP": {
+      "title": "SOAP",
+      "description": "Clinical subjective, objective, assessment, and plan record",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "patientRm": { "type": "string" },
+        "patientName": { "type": "string" },
+        "td": { "type": "string" },
+        "nadi": { "type": "string" },
+        "suhu": { "type": "string" },
+        "subjektif": { "type": "string" },
+        "objektif": { "type": "string" },
+        "asesmen": { "type": "string" },
+        "plan": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "updatedBy": { "type": "string" }
+      },
+      "required": ["patientId", "patientRm", "patientName", "td", "nadi", "suhu", "subjektif", "objektif", "asesmen", "plan", "updatedAt", "updatedBy"]
+    },
+    "Koding": {
+      "title": "Koding",
+      "description": "Clinical diagnosis coding record using ICD-10",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "patientRm": { "type": "string" },
+        "patientName": { "type": "string" },
+        "primaryCode": { "type": "string" },
+        "primaryDescription": { "type": "string" },
+        "secondaryCode": { "type": "string" },
+        "secondaryDescription": { "type": "string" },
+        "alertMessage": { "type": "string" },
+        "isValid": { "type": "boolean" },
+        "updatedAt": { "type": "string" },
+        "updatedBy": { "type": "string" }
+      },
+      "required": ["patientId", "patientRm", "patientName", "primaryCode", "primaryDescription", "secondaryCode", "secondaryDescription", "isValid", "updatedAt", "updatedBy"]
+    },
+    "Berkas": {
+      "title": "Berkas",
+      "description": "Medical record completeness tracking hybrid status",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "rmNumber": { "type": "string" },
+        "patientName": { "type": "string" },
+        "rakCode": { "type": "string" },
+        "isLengkap": { "type": "boolean" },
+        "isScanPdf": { "type": "boolean" },
+        "pdfFileName": { "type": "string" },
+        "pdfDataUrl": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["patientId", "rmNumber", "patientName", "rakCode", "isLengkap", "isScanPdf", "updatedAt"]
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "System access and forensic audit trail",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "user": { "type": "string" },
+        "role": { "type": "string" },
+        "action": { "type": "string" },
+        "module": { "type": "string" },
+        "details": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "user", "role", "action", "module", "details"]
+    }
+  },
+  "firestore": {
+    "patients": {
+      "schema": "Patient",
+      "description": "Queue and demographics of registered patients"
+    },
+    "soaps": {
+      "schema": "SOAP",
+      "description": "Clinical SOAP notes mapped by patient ID"
+    },
+    "kodings": {
+      "schema": "Koding",
+      "description": "ICD-10 clinical diagnosis coding mapped by patient ID"
+    },
+    "berkas": {
+      "schema": "Berkas",
+      "description": "Medical record file tracker mapped by patient ID"
+    },
+    "audit_logs": {
+      "schema": "AuditLog",
+      "description": "Forensic audit history trail of staff actions"
+    }
+  }
+}
