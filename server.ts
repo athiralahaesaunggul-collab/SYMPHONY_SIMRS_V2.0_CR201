@@ -221,17 +221,17 @@ app.get('/api/sync', async (req: Request, res: Response) => {
 // POST /api/patients - Register patient and berkas tracking
 app.post('/api/patients', async (req: Request, res: Response) => {
   const { id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt, berkas } = req.body;
-  
+
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
-    
+
     // Insert patient
     await connection.query(
       'INSERT INTO patients (id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt]
     );
-    
+
     // Insert berkas tracker
     if (berkas) {
       await connection.query(
@@ -254,7 +254,7 @@ app.post('/api/patients', async (req: Request, res: Response) => {
         ]
       );
     }
-    
+
     await connection.commit();
     res.json({ status: 'success', message: 'Pasien baru berhasil didaftarkan.' });
   } catch (error: any) {
@@ -282,11 +282,11 @@ app.put('/api/patients/:id/status', async (req: Request, res: Response) => {
 // POST /api/soaps - Insert or Update SOAP/CPPT record
 app.post('/api/soaps', async (req: Request, res: Response) => {
   const { patientId, patientRm, patientName, td, nadi, suhu, subjektif, objektif, asesmen, plan, updatedAt, updatedBy } = req.body;
-  
+
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
-    
+
     // 1. Save SOAP
     await connection.query(`
       INSERT INTO soaps 
@@ -299,13 +299,13 @@ app.post('/api/soaps', async (req: Request, res: Response) => {
       patientId, patientRm, patientName, td, nadi, suhu, subjektif, objektif, asesmen, plan, updatedAt, updatedBy,
       patientRm, patientName, td, nadi, suhu, subjektif, objektif, asesmen, plan, updatedAt, updatedBy
     ]);
-    
+
     // 2. Move patient status to 'Sudah Diperiksa'
     await connection.query(
       'UPDATE patients SET status = ? WHERE id = ?',
       ['Sudah Diperiksa', patientId]
     );
-    
+
     // 3. Update checklist_soap to true and check completeness
     const [berkasRows] = await connection.query(
       'SELECT checklist_identity, checklist_informedConsent, checklist_coding FROM berkas WHERE patientId = ?',
@@ -319,7 +319,7 @@ app.post('/api/soaps', async (req: Request, res: Response) => {
         [isLengkap, updatedAt, patientId]
       );
     }
-    
+
     await connection.commit();
     res.json({ status: 'success', message: 'SOAP berhasil disimpan dan berkas diperbarui.' });
   } catch (error: any) {
@@ -334,11 +334,11 @@ app.post('/api/soaps', async (req: Request, res: Response) => {
 // POST /api/kodings - Insert or Update ICD-10 Coding
 app.post('/api/kodings', async (req: Request, res: Response) => {
   const { patientId, patientRm, patientName, primaryCode, primaryDescription, secondaryCode, secondaryDescription, alertMessage, isValid, updatedAt, updatedBy } = req.body;
-  
+
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
-    
+
     // 1. Save Coding
     await connection.query(`
       INSERT INTO kodings 
@@ -351,13 +351,13 @@ app.post('/api/kodings', async (req: Request, res: Response) => {
       patientId, patientRm, patientName, primaryCode, primaryDescription, secondaryCode, secondaryDescription, alertMessage, isValid ? 1 : 0, updatedAt, updatedBy,
       patientRm, patientName, primaryCode, primaryDescription, secondaryCode, secondaryDescription, alertMessage, isValid ? 1 : 0, updatedAt, updatedBy
     ]);
-    
+
     // 2. Move patient status to 'Selesai Koding'
     await connection.query(
       'UPDATE patients SET status = ? WHERE id = ?',
       ['Selesai Koding', patientId]
     );
-    
+
     // 3. Update checklist_coding to true and check completeness
     const [berkasRows] = await connection.query(
       'SELECT checklist_identity, checklist_informedConsent, checklist_soap FROM berkas WHERE patientId = ?',
@@ -371,7 +371,7 @@ app.post('/api/kodings', async (req: Request, res: Response) => {
         [isLengkap, updatedAt, patientId]
       );
     }
-    
+
     await connection.commit();
     res.json({ status: 'success', message: 'Koding ICD-10 berhasil disimpan.' });
   } catch (error: any) {
@@ -387,25 +387,25 @@ app.post('/api/kodings', async (req: Request, res: Response) => {
 app.put('/api/berkas/:patientId/checklist', async (req: Request, res: Response) => {
   const { patientId } = req.params;
   const { item, value, updatedAt } = req.body; // item can be 'identity', 'informedConsent', 'soap', 'coding'
-  
+
   const colName = `checklist_${item}`;
-  
+
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
-    
+
     // Update checklist item
     await connection.query(
       `UPDATE berkas SET ${colName} = ?, updatedAt = ? WHERE patientId = ?`,
       [value ? 1 : 0, updatedAt, patientId]
     );
-    
+
     // Recalculate isLengkap
     const [berkasRows] = await connection.query(
       'SELECT checklist_identity, checklist_informedConsent, checklist_soap, checklist_coding FROM berkas WHERE patientId = ?',
       [patientId]
     );
-    
+
     if ((berkasRows as any[]).length > 0) {
       const b = (berkasRows as any[])[0];
       const isLengkap = (b.checklist_identity && b.checklist_informedConsent && b.checklist_soap && b.checklist_coding) ? 1 : 0;
@@ -414,7 +414,7 @@ app.put('/api/berkas/:patientId/checklist', async (req: Request, res: Response) 
         [isLengkap, patientId]
       );
     }
-    
+
     await connection.commit();
     res.json({ status: 'success', message: 'Checklist kelengkapan berkas berhasil diperbarui.' });
   } catch (error: any) {
@@ -430,7 +430,7 @@ app.put('/api/berkas/:patientId/checklist', async (req: Request, res: Response) 
 app.post('/api/berkas/:patientId/upload', async (req: Request, res: Response) => {
   const { patientId } = req.params;
   const { fileName, fileData, uploadedSlots, updatedAt } = req.body;
-  
+
   try {
     await pool.query(
       'UPDATE berkas SET isScanPdf = 1, pdfFileName = ?, pdfDataUrl = ?, uploadedSlots = ?, updatedAt = ? WHERE patientId = ?',
@@ -481,14 +481,14 @@ app.post('/api/reset', async (req: Request, res: Response) => {
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
-    
+
     // Disable constraints
     await connection.query('SET FOREIGN_KEY_CHECKS = 0');
-    
+
     // Read schema.sql
     const schemaPath = path.join(__dirname, 'schema.sql');
     const sqlContent = fs.readFileSync(schemaPath, 'utf8');
-    
+
     // Clean comments and split SQL statements by semicolon
     const cleanSql = sqlContent
       .split(/\r?\n/)
@@ -505,14 +505,14 @@ app.post('/api/reset', async (req: Request, res: Response) => {
       .split(';')
       .map(statement => statement.trim())
       .filter(statement => statement.length > 0);
-      
+
     for (const statement of sqlStatements) {
       await connection.query(statement);
     }
-    
+
     // Re-enable constraints
     await connection.query('SET FOREIGN_KEY_CHECKS = 1');
-    
+
     await connection.commit();
     res.json({ status: 'success', message: 'Sistem SIMRS berhasil direset ke database standar.' });
   } catch (error: any) {

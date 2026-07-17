@@ -259,9 +259,16 @@ export const Admisi: React.FC = () => {
     }
   }, [formData.birthDate]);
 
-  // Inisialisasi daftar provinsi langsung dari data statis (tidak perlu fetch API)
+  // Inisialisasi daftar provinsi, kabupaten, dan kecamatan dari local JSON
   useEffect(() => {
-    setListProvinsi(STATIC_PROVINCES);
+    // Load provinces from public folder
+    fetch(getWilayahJsonUrl('wilayah_provinsi.json'))
+      .then(res => res.json())
+      .then(data => setListProvinsi(data))
+      .catch(err => {
+        console.error("Gagal load local provinsi:", err);
+        setListProvinsi(STATIC_PROVINCES);
+      });
 
     // Load kabupaten and kecamatan mappings on load from public folder
     fetch(getWilayahJsonUrl('wilayah_kabupaten.json'))
@@ -275,35 +282,13 @@ export const Admisi: React.FC = () => {
       .catch(err => console.error("Gagal load local kecamatan:", err));
   }, []);
 
-  // Helper fallback untuk online fetch jika data lokal belum siap
-  const fetchFallbackKabupaten = (provId: string) => {
-    fetch(`https://emsifa.github.io/api-wilayah-indonesia/api/regencies/${provId}.json`)
-      .then(res => res.json())
-      .then(data => setListKabupaten(data))
-      .catch(err => console.error("Fallback load kabupaten failed:", err));
-  };
-
-  const fetchFallbackKecamatan = (kabId: string) => {
-    fetch(`https://emsifa.github.io/api-wilayah-indonesia/api/districts/${kabId}.json`)
-      .then(res => res.json())
-      .then(data => setListKecamatan(data))
-      .catch(err => console.error("Fallback load kecamatan failed:", err));
-  };
-
-  const fetchFallbackKelurahan = (kecId: string) => {
-    fetch(`https://emsifa.github.io/api-wilayah-indonesia/api/villages/${kecId}.json`)
-      .then(res => res.json())
-      .then(data => setListKelurahan(data))
-      .catch(err => console.error("Fallback load kelurahan failed:", err));
-  };
-
   // Update daftar kabupaten ketika provinsi terpilih berubah
   useEffect(() => {
     if (selectedProvinsi) {
       if (allKabupatenMap[selectedProvinsi] && allKabupatenMap[selectedProvinsi].length > 0) {
         setListKabupaten(allKabupatenMap[selectedProvinsi]);
       } else {
-        fetchFallbackKabupaten(selectedProvinsi);
+        setListKabupaten([]);
       }
     } else {
       setListKabupaten([]);
@@ -316,7 +301,7 @@ export const Admisi: React.FC = () => {
       if (allKecamatanMap[selectedKabupaten] && allKecamatanMap[selectedKabupaten].length > 0) {
         setListKecamatan(allKecamatanMap[selectedKabupaten]);
       } else {
-        fetchFallbackKecamatan(selectedKabupaten);
+        setListKecamatan([]);
       }
     } else {
       setListKecamatan([]);
@@ -335,18 +320,18 @@ export const Admisi: React.FC = () => {
             if (data[selectedKecamatan] && data[selectedKecamatan].length > 0) {
               setListKelurahan(data[selectedKecamatan]);
             } else {
-              fetchFallbackKelurahan(selectedKecamatan);
+              setListKelurahan([]);
             }
           })
           .catch(err => {
             console.error("Gagal load local kelurahan:", err);
-            fetchFallbackKelurahan(selectedKecamatan);
+            setListKelurahan([]);
           });
       } else {
         if (allKelurahanMap[selectedKecamatan] && allKelurahanMap[selectedKecamatan].length > 0) {
           setListKelurahan(allKelurahanMap[selectedKecamatan]);
         } else {
-          fetchFallbackKelurahan(selectedKecamatan);
+          setListKelurahan([]);
         }
       }
     } else {
