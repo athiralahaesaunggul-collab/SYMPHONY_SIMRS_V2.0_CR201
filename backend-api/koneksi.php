@@ -4,24 +4,25 @@
  * Symphony SIMRS v2.0
  */
 
-$host = "localhost";
-$username = "root";
-$password = "";
+$host = getenv('DB_HOST') ?: "localhost";
+$username = getenv('DB_USER') ?: "root";
+$password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : "";
+$port = getenv('DB_PORT') ?: "3306";
 
 // 1. Koneksi awal ke server MySQL (tanpa memilih database dulu agar aman)
-$koneksi = @mysqli_connect($host, $username, $password);
+$koneksi = @mysqli_connect($host, $username, $password, null, (int)$port);
 
 if (!$koneksi) {
     header("Content-Type: application/json");
     echo json_encode([
         "status" => "error",
-        "message" => "Gagal terkoneksi ke MySQL Server XAMPP: " . mysqli_connect_error()
+        "message" => "Gagal terkoneksi ke MySQL Server: " . mysqli_connect_error()
     ]);
     exit();
 }
 
 // 2. Tentukan database utama dan database cadangan (sesuai instruksi revisi)
-$db_utama = "symphony_simrs_v2.0_cr201";
+$db_utama = getenv('DB_NAME') ?: "symphony_simrs_v2.0_cr201";
 $db_cadangan = "simr_esaunggul";
 
 $db_selected = false;
