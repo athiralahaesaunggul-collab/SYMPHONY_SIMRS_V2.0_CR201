@@ -275,7 +275,7 @@ export const Header: React.FC = () => {
                   Terdaftar resmi dalam program Capstone RMIK <strong>Universitas Esa Unggul</strong>.
                 </div>
                 <img
-                  src="src/components/logo-ueu-unggul-15012025-No-BG (1).png"
+                  src="/logo-ueu.png"
                   alt="Logo Esa Unggul"
                   className="h-8 object-contain"
                   referrerPolicy="no-referrer"

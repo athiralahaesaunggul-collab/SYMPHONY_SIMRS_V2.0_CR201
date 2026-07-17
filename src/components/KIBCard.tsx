@@ -54,7 +54,7 @@ export const KIBCard: React.FC<KIBCardProps> = ({ patient, onClose }) => {
               <div className="flex items-center space-x-1.5">
                 <div className="bg-white p-0.5 rounded">
                   <img 
-                    src="src/components/logo-ueu-unggul-15012025-No-BG (1).png" 
+                    src="/logo-ueu.png" 
                     alt="Logo UEU" 
                     className="h-5 object-contain"
                     referrerPolicy="no-referrer"

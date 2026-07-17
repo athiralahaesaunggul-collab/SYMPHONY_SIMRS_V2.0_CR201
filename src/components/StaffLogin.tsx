@@ -62,7 +62,7 @@ export const StaffLogin: React.FC = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="bg-white p-4 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-22 w-auto mb-5 transition-transform duration-300 hover:scale-105">
             <img
-              src="src/components/logo-ueu-unggul-15012025-No-BG (1).png"
+              src="/logo-ueu.png"
               alt="Logo Universitas Esa Unggul"
               className="max-h-16 object-contain"
               referrerPolicy="no-referrer"
