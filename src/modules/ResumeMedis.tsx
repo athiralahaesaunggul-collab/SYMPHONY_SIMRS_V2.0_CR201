@@ -269,7 +269,7 @@ const ResumeMedis: React.FC = () => {
             <tr>
               <td style={{ width: '15%', textAlign: 'center', border: '1px solid #000', padding: '4px' }}>
                 <img
-                  src="src/components/logo-ueu-unggul-15012025-No-BG (1).png"
+                  src="/logo-ueu.png"
                   alt="Logo UEU"
                   style={{ height: '52px', display: 'block', margin: '0 auto' }}
                 />

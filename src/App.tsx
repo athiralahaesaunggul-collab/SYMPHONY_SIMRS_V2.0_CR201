@@ -8,6 +8,7 @@ import { Koding } from './modules/Koding';
 import { Berkas } from './modules/Berkas';
 import { DashboardSIMRS } from './DashboardSIMRS';
 import { AuditTrail } from './modules/AuditTrail';
+import LogoUEU from './assets/logo-ueu.png';
 
 import {
   LayoutDashboard,
@@ -169,7 +170,7 @@ const WorkstationContainer: React.FC = () => {
         <div className="flex flex-col items-center justify-center mb-8 relative z-10 w-full max-w-md">
           <div className="bg-white p-4 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-22 w-auto mb-5 transition-transform duration-300 hover:scale-105">
             <img 
-              src="src/components/logo-ueu-unggul-15012025-No-BG (1).png" 
+              src={LogoUEU} 
               alt="Logo Universitas Esa Unggul" 
               className="max-h-16 object-contain"
               referrerPolicy="no-referrer"
@@ -278,7 +279,7 @@ const WorkstationContainer: React.FC = () => {
           <div className="flex items-center space-x-3">
             {/* Logo UEU di sebelah kiri Symphony */}
             <img
-              src="src/components/logo-ueu-unggul-15012025-No-BG (1).png"
+              src={LogoUEU}
               alt="Logo Universitas Esa Unggul"
               className="h-12 object-contain flex-shrink-0"
             />
