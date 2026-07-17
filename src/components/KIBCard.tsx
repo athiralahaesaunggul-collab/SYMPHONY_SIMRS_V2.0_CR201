@@ -5,6 +5,7 @@
 
 import React, { useRef } from 'react';
 import { Patient } from '../types';
+import LogoUEU from '../assets/logo-ueu.png';
 import { X, Printer, Download, CreditCard, ShieldCheck } from 'lucide-react';
 
 interface KIBCardProps {
@@ -54,7 +55,7 @@ export const KIBCard: React.FC<KIBCardProps> = ({ patient, onClose }) => {
               <div className="flex items-center space-x-1.5">
                 <div className="bg-white p-0.5 rounded">
                   <img 
-                    src="/logo-ueu.png" 
+                    src={LogoUEU} 
                     alt="Logo UEU" 
                     className="h-5 object-contain"
                     referrerPolicy="no-referrer"

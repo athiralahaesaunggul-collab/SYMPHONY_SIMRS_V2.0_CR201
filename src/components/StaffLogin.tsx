@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
+import LogoUEU from '../assets/logo-ueu.png';
 import { Staff } from '../types';
 import { Shield, Key, UserCheck, AlertCircle } from 'lucide-react';
 
@@ -62,7 +63,7 @@ export const StaffLogin: React.FC = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="bg-white p-4 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-22 w-auto mb-5 transition-transform duration-300 hover:scale-105">
             <img
-              src="/logo-ueu.png"
+              src={LogoUEU}
               alt="Logo Universitas Esa Unggul"
               className="max-h-16 object-contain"
               referrerPolicy="no-referrer"

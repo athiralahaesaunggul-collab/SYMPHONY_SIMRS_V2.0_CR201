@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
+import LogoUEU from '../assets/logo-ueu.png';
 import {
   Users,
   FileText,
@@ -117,7 +118,7 @@ export const Header: React.FC = () => {
           {/* Left brand layout */}
           <div className="flex items-center space-x-3">
             <img
-              src="/logo-ueu.png"
+              src={LogoUEU}
               alt="Logo Universitas Esa Unggul"
               className="h-10 w-auto object-contain"
               referrerPolicy="no-referrer"
@@ -281,7 +282,7 @@ export const Header: React.FC = () => {
                   Terdaftar resmi dalam program Capstone RMIK <strong>Universitas Esa Unggul</strong>.
                 </div>
                 <img
-                  src="/logo-ueu.png"
+                  src={LogoUEU}
                   alt="Logo Esa Unggul"
                   className="h-8 object-contain"
                   referrerPolicy="no-referrer"

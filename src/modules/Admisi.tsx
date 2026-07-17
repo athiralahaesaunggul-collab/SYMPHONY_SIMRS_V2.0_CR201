@@ -110,6 +110,12 @@ const DOCTORS_BY_CLINIC = {
   ]
 };
 
+const getWilayahJsonUrl = (filename: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const prefix = base.endsWith('/') ? base : `${base}/`;
+  return `${prefix}${filename}`;
+};
+
 export const Admisi: React.FC = () => {
   const {
     patients,
@@ -258,12 +264,12 @@ export const Admisi: React.FC = () => {
     setListProvinsi(STATIC_PROVINCES);
 
     // Load kabupaten and kecamatan mappings on load from public folder
-    fetch('/symphony_simrs_v2.0_cr201/wilayah_kabupaten.json')
+    fetch(getWilayahJsonUrl('wilayah_kabupaten.json'))
       .then(res => res.json())
       .then(data => setAllKabupatenMap(data))
       .catch(err => console.error("Gagal load local kabupaten:", err));
 
-    fetch('/symphony_simrs_v2.0_cr201/wilayah_kecamatan.json')
+    fetch(getWilayahJsonUrl('wilayah_kecamatan.json'))
       .then(res => res.json())
       .then(data => setAllKecamatanMap(data))
       .catch(err => console.error("Gagal load local kecamatan:", err));
@@ -322,7 +328,7 @@ export const Admisi: React.FC = () => {
     if (selectedKecamatan) {
       if (Object.keys(allKelurahanMap).length === 0) {
         // Load file kelurahan secara lazy dari public folder
-        fetch('/symphony_simrs_v2.0_cr201/wilayah_kelurahan.json')
+        fetch(getWilayahJsonUrl('wilayah_kelurahan.json'))
           .then(res => res.json())
           .then(data => {
             setAllKelurahanMap(data);
@@ -347,6 +353,51 @@ export const Admisi: React.FC = () => {
       setListKelurahan([]);
     }
   }, [selectedKecamatan, allKelurahanMap]);
+
+  // Synchronize dropdown IDs (selectedProvinsi, etc.) when formData (populated from draft/old patient) is updated
+  useEffect(() => {
+    if (formData.province) {
+      const foundProv = STATIC_PROVINCES.find(p => p.name.toUpperCase() === formData.province.toUpperCase());
+      if (foundProv && selectedProvinsi !== foundProv.id) {
+        setSelectedProvinsi(foundProv.id);
+      }
+    } else {
+      setSelectedProvinsi('');
+    }
+  }, [formData.province, selectedProvinsi]);
+
+  useEffect(() => {
+    if (selectedProvinsi && formData.city && listKabupaten.length > 0) {
+      const foundKab = listKabupaten.find(k => k.name.toUpperCase() === formData.city.toUpperCase());
+      if (foundKab && selectedKabupaten !== foundKab.id) {
+        setSelectedKabupaten(foundKab.id);
+      }
+    } else if (!selectedProvinsi || !formData.city) {
+      setSelectedKabupaten('');
+    }
+  }, [selectedProvinsi, formData.city, listKabupaten, selectedKabupaten]);
+
+  useEffect(() => {
+    if (selectedKabupaten && formData.kecamatan && listKecamatan.length > 0) {
+      const foundKec = listKecamatan.find(k => k.name.toUpperCase() === formData.kecamatan.toUpperCase());
+      if (foundKec && selectedKecamatan !== foundKec.id) {
+        setSelectedKecamatan(foundKec.id);
+      }
+    } else if (!selectedKabupaten || !formData.kecamatan) {
+      setSelectedKecamatan('');
+    }
+  }, [selectedKabupaten, formData.kecamatan, listKecamatan, selectedKecamatan]);
+
+  useEffect(() => {
+    if (selectedKecamatan && formData.kelurahan && listKelurahan.length > 0) {
+      const foundKel = listKelurahan.find(k => k.name.toUpperCase() === formData.kelurahan.toUpperCase());
+      if (foundKel && selectedKelurahan !== foundKel.id) {
+        setSelectedKelurahan(foundKel.id);
+      }
+    } else if (!selectedKecamatan || !formData.kelurahan) {
+      setSelectedKelurahan('');
+    }
+  }, [selectedKecamatan, formData.kelurahan, listKelurahan, selectedKelurahan]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
