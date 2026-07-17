@@ -63,7 +63,7 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
 // GET /api/sync - Real-time synchronization equivalent
 app.get('/api/sync', async (req: Request, res: Response) => {
   try {
-    // 1. Fetch patients (format dates to YYYY-MM-DD or YYYY-MM-DD HH:mm:ss for consistency)
+    // 1. Fetch patients
     const [patients] = await pool.query(`
       SELECT 
         id, 
@@ -81,7 +81,7 @@ app.get('/api/sync', async (req: Request, res: Response) => {
       ORDER BY id ASC
     `);
 
-    // 2. Fetch soaps & map to Record<string, SOAP>
+    // 2. Fetch soaps
     const [soaps] = await pool.query(`
       SELECT 
         patientId, 
@@ -103,7 +103,7 @@ app.get('/api/sync', async (req: Request, res: Response) => {
       soapsMap[s.patientId] = s;
     }
 
-    // 3. Fetch kodings & map to Record<string, Koding>
+    // 3. Fetch kodings
     const [kodings] = await pool.query(`
       SELECT 
         patientId, 
@@ -127,7 +127,7 @@ app.get('/api/sync', async (req: Request, res: Response) => {
       };
     }
 
-    // 4. Fetch berkas & map to Record<string, Berkas>
+    // 4. Fetch berkas
     const [berkas] = await pool.query(`
       SELECT 
         patientId, 
@@ -182,7 +182,7 @@ app.get('/api/sync', async (req: Request, res: Response) => {
       ORDER BY timestamp DESC
     `);
 
-    // 6. Fetch CPPT records & map to Record<string, CpptHistoryEntry[]>
+    // 6. Fetch CPPT records
     let cpptRecordsMap: Record<string, any[]> = {};
     try {
       const [cpptRows] = await pool.query(`
@@ -197,7 +197,6 @@ app.get('/api/sync', async (req: Request, res: Response) => {
         cpptRecordsMap[c.patientId].push(c);
       }
     } catch (_) {
-      // Table may not exist yet (before migration)
       cpptRecordsMap = {};
     }
 
@@ -218,7 +217,7 @@ app.get('/api/sync', async (req: Request, res: Response) => {
   }
 });
 
-// POST /api/patients - Register patient and berkas tracking
+// POST /api/patients - Register patient, berkas tracking, AND audit logs
 app.post('/api/patients', async (req: Request, res: Response) => {
   const { id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt, berkas } = req.body;
 
@@ -226,13 +225,13 @@ app.post('/api/patients', async (req: Request, res: Response) => {
   try {
     await connection.beginTransaction();
 
-    // Insert patient
+    // 1. Insert patient
     await connection.query(
       'INSERT INTO patients (id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt]
     );
 
-    // Insert berkas tracker
+    // 2. Insert berkas tracker
     if (berkas) {
       await connection.query(
         'INSERT INTO berkas (patientId, rmNumber, patientName, rakCode, isLengkap, checklist_identity, checklist_informedConsent, checklist_soap, checklist_coding, isScanPdf, pdfFileName, pdfDataUrl, uploadedSlots, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
@@ -255,8 +254,18 @@ app.post('/api/patients', async (req: Request, res: Response) => {
       );
     }
 
+    // 3. Insert Audit Log Otomatis
+    const logId = `LOG-${Date.now()}`;
+    const logTimestamp = createdAt || new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const logDetails = `Mendaftarkan pasien baru: ${name} (${rmNumber}) di ${clinic}`;
+
+    await connection.query(
+      'INSERT INTO audit_logs (id, timestamp, user, role, action, module, details) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [logId, logTimestamp, 'Admin', 'Admin', 'Tambah Pasien', 'Pendaftaran', logDetails]
+    );
+
     await connection.commit();
-    res.json({ status: 'success', message: 'Pasien baru berhasil didaftarkan.' });
+    res.json({ status: 'success', message: 'Pasien baru dan log audit berhasil disimpan.' });
   } catch (error: any) {
     await connection.rollback();
     console.error('Error registering patient:', error);
@@ -386,7 +395,7 @@ app.post('/api/kodings', async (req: Request, res: Response) => {
 // PUT /api/berkas/:patientId/checklist - Update a checklist item manually
 app.put('/api/berkas/:patientId/checklist', async (req: Request, res: Response) => {
   const { patientId } = req.params;
-  const { item, value, updatedAt } = req.body; // item can be 'identity', 'informedConsent', 'soap', 'coding'
+  const { item, value, updatedAt } = req.body;
 
   const colName = `checklist_${item}`;
 
@@ -447,7 +456,6 @@ app.post('/api/berkas/:patientId/upload', async (req: Request, res: Response) =>
 app.post('/api/cppt', async (req: Request, res: Response) => {
   const { id, patientId, no, tanggal, jam, profesi, petugas, subjektif, objektif, asesmen, plan, td, nadi, suhu } = req.body;
   try {
-    // Generate ID if not provided
     const entryId = id || `CPPT-${patientId}-${Date.now()}`;
     await pool.query(
       'INSERT INTO cppt_records (id, patientId, no, tanggal, jam, profesi, petugas, subjektif, objektif, asesmen, plan, td, nadi, suhu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
