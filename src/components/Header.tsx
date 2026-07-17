@@ -86,7 +86,7 @@ export const Header: React.FC = () => {
       case 'Direktur':
         return {
           nip: '197005121998032001',
-          unit: 'Manajemen Eksekutif (Direksi)',
+          unit: 'Manajemen Executive (Direksi)',
           bidang: 'Pimpinan & Kebijakan SIMRS',
           degree: 'Dr. dr., M.A.R.S - Magister Administrasi RS',
           status: 'Direktur Utama Rumah Sakit',
@@ -116,11 +116,11 @@ export const Header: React.FC = () => {
 
           {/* Left brand layout */}
           <div className="flex items-center space-x-3">
-            {/* LOGO BARU DIBAWAH INI LANGSUNG MENGARAH KE FOLDER PUBLIC */}
             <img
               src="/logo-ueu.png"
               alt="Logo Universitas Esa Unggul"
               className="h-10 w-auto object-contain"
+              referrerPolicy="no-referrer"
             />
             <div>
               <h1 className="text-xl font-bold text-slate-800 tracking-tight flex items-center">
