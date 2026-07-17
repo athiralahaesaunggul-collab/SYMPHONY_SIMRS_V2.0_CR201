@@ -11,6 +11,7 @@ const pool = mysql.createPool({
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'symphony_simrs_v2.0_cr201',
   port: parseInt(process.env.DB_PORT || '3306', 10),
+  ssl: { rejectUnauthorized: false },
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
