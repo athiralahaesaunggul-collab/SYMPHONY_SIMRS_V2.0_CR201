@@ -17,32 +17,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ⚠️  SEMENTARA: CORS dibuka untuk semua origin agar URL preview Vercel tidak terblokir.
-// Ganti kembali dengan whitelist di bawah ini sebelum go-live ke produksi.
 app.use(cors());
 
 // Tangani preflight OPTIONS secara global sebelum route apapun
 app.options('*', cors());
-
-// ── Konfigurasi CORS ketat (aktifkan kembali untuk produksi) ──────────────────
-// const ALLOWED_ORIGINS = [
-//   'https://symphony-simrs-v2-0-cr-201.vercel.app',  // Frontend produksi Vercel
-//   'https://symphony-simrs-backend.vercel.app',       // Backend URL sendiri
-//   'http://localhost:5173',                            // Vite dev server (default)
-//   'http://localhost:3000',                            // CRA / fallback dev
-//   'http://localhost:5000',                            // Express dev lokal
-// ];
-// app.use(cors({
-//   origin: (origin, callback) => {
-//     if (!origin) return callback(null, true);
-//     if (ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
-//     return callback(new Error(`CORS: Origin '${origin}' tidak diizinkan.`));
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-//   credentials: true,
-//   optionsSuccessStatus: 204,
-// }));
-// ─────────────────────────────────────────────────────────────────────────────
 
 // Set JSON payload size limit to handle base64 PDF uploads
 app.use(express.json({ limit: '50mb' }));
@@ -63,10 +41,10 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
     const [tables] = await pool.query('SHOW TABLES');
     res.json({
       status: 'success',
-      message: 'Koneksi ke database MySQL lokal berhasil!',
+      message: 'Koneksi ke database MySQL berhasil!',
       details: {
-        database: process.env.DB_NAME || 'symphony_simrs_v2.0_cr201',
-        host: process.env.DB_HOST || 'localhost',
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
         test_query_result: rows,
         tables_count: Array.isArray(tables) ? tables.length : 0,
         tables: tables
@@ -82,9 +60,7 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
   }
 });
 
-// Handler sinkronisasi data – digunakan oleh dua route:
-// • /api/sync  → path standar backend
-// • /sync      → alias agar frontend yang memanggil tanpa prefix /api tetap terlayani
+// Handler sinkronisasi data
 const handleSync = async (req: Request, res: Response) => {
   try {
     // 1. Fetch patients
@@ -240,13 +216,13 @@ const handleSync = async (req: Request, res: Response) => {
   }
 };
 
-// Daftarkan dua path untuk endpoint sync
-app.get('/api/sync', handleSync);  // Path standar
-app.get('/sync', handleSync);      // Alias tanpa prefix /api (untuk kompatibilitas frontend)
+// Daftarkan endpoint sync
+app.get('/api/sync', handleSync);
+app.get('/sync', handleSync);
 
-// POST /api/patients - Register patient, berkas tracking, AND audit logs
+// POST /api/patients - Register patient, berkas tracking, AND audit logs (FIXED: Kolom age dihapus)
 app.post('/api/patients', async (req: Request, res: Response) => {
-  const { id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt, berkas } = req.body;
+  const { id, rmNumber, name, nik, birthDate, gender, insurance, clinic, status, createdAt, berkas } = req.body;
 
   const connection = await pool.getConnection();
   try {
@@ -254,8 +230,8 @@ app.post('/api/patients', async (req: Request, res: Response) => {
 
     // 1. Insert patient
     await connection.query(
-      'INSERT INTO patients (id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt]
+      'INSERT INTO patients (id, rmNumber, name, nik, birthDate, gender, insurance, clinic, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [id, rmNumber, name, nik, birthDate, gender, insurance, clinic, status, createdAt]
     );
 
     // 2. Insert berkas tracker
@@ -430,13 +406,11 @@ app.put('/api/berkas/:patientId/checklist', async (req: Request, res: Response) 
   try {
     await connection.beginTransaction();
 
-    // Update checklist item
     await connection.query(
       `UPDATE berkas SET ${colName} = ?, updatedAt = ? WHERE patientId = ?`,
       [value ? 1 : 0, updatedAt, patientId]
     );
 
-    // Recalculate isLengkap
     const [berkasRows] = await connection.query(
       'SELECT checklist_identity, checklist_informedConsent, checklist_soap, checklist_coding FROM berkas WHERE patientId = ?',
       [patientId]
@@ -462,7 +436,7 @@ app.put('/api/berkas/:patientId/checklist', async (req: Request, res: Response) 
   }
 });
 
-// POST /api/berkas/:patientId/upload - Upload scanned PDF (Alih Media)
+// POST /api/berkas/:patientId/upload - Upload scanned PDF
 app.post('/api/berkas/:patientId/upload', async (req: Request, res: Response) => {
   const { patientId } = req.params;
   const { fileName, fileData, uploadedSlots, updatedAt } = req.body;
@@ -510,30 +484,19 @@ app.post('/api/audit-logs', async (req: Request, res: Response) => {
   }
 });
 
-// POST /api/reset - Reset and seed database using schema.sql
+// POST /api/reset - Reset database
 app.post('/api/reset', async (req: Request, res: Response) => {
-  console.log('Resetting MySQL database to default state...');
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
-
-    // Disable constraints
     await connection.query('SET FOREIGN_KEY_CHECKS = 0');
 
-    // Read schema.sql
     const schemaPath = path.join(__dirname, 'schema.sql');
     const sqlContent = fs.readFileSync(schemaPath, 'utf8');
 
-    // Clean comments and split SQL statements by semicolon
     const cleanSql = sqlContent
       .split(/\r?\n/)
-      .map(line => {
-        const trimmed = line.trim();
-        if (trimmed.startsWith('--') || trimmed.startsWith('#')) {
-          return '';
-        }
-        return line;
-      })
+      .map(line => line.trim().startsWith('--') || line.trim().startsWith('#') ? '' : line)
       .join('\n');
 
     const sqlStatements = cleanSql
@@ -545,25 +508,17 @@ app.post('/api/reset', async (req: Request, res: Response) => {
       await connection.query(statement);
     }
 
-    // Re-enable constraints
     await connection.query('SET FOREIGN_KEY_CHECKS = 1');
-
     await connection.commit();
-    res.json({ status: 'success', message: 'Sistem SIMRS berhasil direset ke database standar.' });
+    res.json({ status: 'success', message: 'Database reset successfully.' });
   } catch (error: any) {
     await connection.rollback();
-    console.error('Error resetting database:', error);
     res.status(500).json({ status: 'error', error: error.message });
   } finally {
     connection.release();
   }
 });
 
-// Start the server
 app.listen(PORT, () => {
-  console.log(`==================================================`);
-  console.log(` Backend server running at http://localhost:${PORT}`);
-  console.log(` Test DB endpoint: http://localhost:${PORT}/api/test-db`);
-  console.log(` Sync endpoint: http://localhost:${PORT}/api/sync`);
-  console.log(`==================================================`);
+  console.log(`Server is running on port ${PORT}`);
 });
