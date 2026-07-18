@@ -93,13 +93,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   });
 
-  // Gunakan relative path /api agar Vite proxy meneruskannya ke backend Express port 5000
-  // Saat diakses dari LAN, browser akan pakai IP server sebagai baseURL-nya
-  const BACKEND_URL = 'https://symphony-simrs-v2-0-cr-201.vercel.app';
+  // Deteksi domain aktif secara dinamis baik di localhost maupun di Vercel produksi/preview
+  const BACKEND_URL = (typeof window !== 'undefined'
+    ? `${window.location.protocol}//${window.location.host}`
+    : 'https://symphony-simrs-v2-0-cr-201.vercel.app') + '/api';
 
   const fetchSyncData = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/api/sync`);
+      const response = await fetch(`${BACKEND_URL}/sync`);
       const result = await response.json();
       if (result.status === 'success') {
         const { patients: pData, soaps: sData, kodings: kData, berkas: bData, auditLogs: aData, cpptRecords: cData } = result.data;
