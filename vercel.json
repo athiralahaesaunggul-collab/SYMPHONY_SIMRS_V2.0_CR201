@@ -16,6 +16,10 @@
       "dest": "server.ts"
     },
     {
+      "src": "/sync",
+      "dest": "server.ts"
+    },
+    {
       "handle": "filesystem"
     },
     {

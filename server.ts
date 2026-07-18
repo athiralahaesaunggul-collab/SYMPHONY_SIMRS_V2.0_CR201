@@ -16,12 +16,34 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enable CORS so the React frontend can make requests to this server
+// Daftar origin yang diizinkan (whitelist)
+const ALLOWED_ORIGINS = [
+  'https://symphony-simrs-v2-0-cr-201.vercel.app',  // Frontend produksi Vercel
+  'https://symphony-simrs-backend.vercel.app',       // Backend URL sendiri (jika diperlukan)
+  'http://localhost:5173',                            // Vite dev server (default)
+  'http://localhost:3000',                            // CRA / fallback dev
+  'http://localhost:5000',                            // Express dev lokal
+];
+
+// Enable CORS – whitelist origin spesifik + handle preflight OPTIONS secara eksplisit
 app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: (origin, callback) => {
+    // Izinkan request tanpa origin (Postman, curl, server-to-server)
+    if (!origin) return callback(null, true);
+    if (ALLOWED_ORIGINS.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`CORS: Origin '${origin}' tidak diizinkan.`));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true,
+  optionsSuccessStatus: 204  // Beberapa browser lama butuh 204 untuk preflight
 }));
+
+// Tangani preflight OPTIONS secara global sebelum route apapun
+app.options('*', cors());
+
 // Set JSON payload size limit to handle base64 PDF uploads
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -60,8 +82,10 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
   }
 });
 
-// GET /api/sync - Real-time synchronization equivalent
-app.get('/api/sync', async (req: Request, res: Response) => {
+// Handler sinkronisasi data – digunakan oleh dua route:
+// • /api/sync  → path standar backend
+// • /sync      → alias agar frontend yang memanggil tanpa prefix /api tetap terlayani
+const handleSync = async (req: Request, res: Response) => {
   try {
     // 1. Fetch patients
     const [patients] = await pool.query(`
@@ -74,7 +98,6 @@ app.get('/api/sync', async (req: Request, res: Response) => {
         gender, 
         insurance, 
         clinic, 
-        age, 
         status, 
         DATE_FORMAT(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt 
       FROM patients 
@@ -215,7 +238,11 @@ app.get('/api/sync', async (req: Request, res: Response) => {
     console.error('Error syncing data:', error);
     res.status(500).json({ status: 'error', message: 'Gagal sinkronisasi data dari MySQL.', error: error.message });
   }
-});
+};
+
+// Daftarkan dua path untuk endpoint sync
+app.get('/api/sync', handleSync);  // Path standar
+app.get('/sync', handleSync);      // Alias tanpa prefix /api (untuk kompatibilitas frontend)
 
 // POST /api/patients - Register patient, berkas tracking, AND audit logs
 app.post('/api/patients', async (req: Request, res: Response) => {
