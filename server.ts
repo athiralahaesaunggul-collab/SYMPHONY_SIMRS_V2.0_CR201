@@ -74,6 +74,7 @@ const handleSync = async (req: Request, res: Response) => {
         gender, 
         insurance, 
         clinic, 
+        age, 
         status, 
         DATE_FORMAT(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt 
       FROM patients 
@@ -220,18 +221,18 @@ const handleSync = async (req: Request, res: Response) => {
 app.get('/api/sync', handleSync);
 app.get('/sync', handleSync);
 
-// POST /api/patients - Register patient, berkas tracking, AND audit logs (FIXED: Kolom age dihapus)
+// POST /api/patients - Register patient, berkas tracking, AND audit logs
 app.post('/api/patients', async (req: Request, res: Response) => {
-  const { id, rmNumber, name, nik, birthDate, gender, insurance, clinic, status, createdAt, berkas } = req.body;
+  const { id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt, berkas } = req.body;
 
   const connection = await pool.getConnection();
   try {
     await connection.beginTransaction();
 
-    // 1. Insert patient
+    // 1. Insert patient (termasuk kolom age)
     await connection.query(
-      'INSERT INTO patients (id, rmNumber, name, nik, birthDate, gender, insurance, clinic, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [id, rmNumber, name, nik, birthDate, gender, insurance, clinic, status, createdAt]
+      'INSERT INTO patients (id, rmNumber, name, nik, birthDate, gender, insurance, clinic, age, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [id, rmNumber, name, nik, birthDate, gender, insurance, clinic, parseInt(age as any, 10) || 0, status, createdAt]
     );
 
     // 2. Insert berkas tracker
