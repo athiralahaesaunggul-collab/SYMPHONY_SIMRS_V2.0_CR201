@@ -9,6 +9,26 @@ import { Berkas } from './modules/Berkas';
 import { DashboardSIMRS } from './DashboardSIMRS';
 import { AuditTrail } from './modules/AuditTrail';
 import LogoUEU from './assets/logo-ueu.png';
+import { Staff } from './types';
+
+// Helper function to check Role-Based Access Control (RBAC)
+export const hasMenuAccess = (role: Staff['role'], menuId: string): boolean => {
+  if (role === 'Direktur') return true;
+  if (menuId === 'dashboard') return true;
+
+  switch (role) {
+    case 'Admin Loket':
+      return menuId === 'admisi';
+    case 'Dokter IGD':
+      return menuId === 'soap' || menuId === 'resume';
+    case 'Koder':
+      return menuId === 'koding';
+    case 'Kepala RMIK':
+      return menuId === 'koding' || menuId === 'berkas';
+    default:
+      return false;
+  }
+};
 
 import {
   LayoutDashboard,
@@ -92,6 +112,13 @@ const WorkstationContainer: React.FC = () => {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // Protect tab routes from unauthorized access (Protected Route redirect)
+  useEffect(() => {
+    if (currentStaff && !hasMenuAccess(currentStaff.role, currentTab)) {
+      setTab('dashboard');
+    }
+  }, [currentStaff, currentTab, setTab]);
 
   // Logout: call context logout + show re-login screen
   const handleLogout = () => {
@@ -355,29 +382,31 @@ const WorkstationContainer: React.FC = () => {
         {/* Row 2: Horizontal Menu Navigation */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <nav className="flex space-x-1 py-2">
-            {menuItems.map((item) => {
-              const Icon = item.icon as React.ElementType | null;
-              const isActive = currentTab === item.id;
-              const isDashboard = item.id === 'dashboard';
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => setTab(item.id)}
-                  className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold rounded-lg transition duration-150 cursor-pointer ${
-                    isDashboard
-                      ? isActive
-                        ? 'text-[#1E3A8A] font-extrabold'
-                        : 'text-slate-600 hover:text-[#1E3A8A] hover:bg-slate-100'
-                      : isActive
-                        ? 'bg-[#1E3A8A] text-white shadow-sm'
-                        : 'text-slate-600 hover:text-[#1E3A8A] hover:bg-slate-100'
-                  }`}
-                >
-                  {Icon && <Icon className="h-4 w-4 shrink-0" />}
-                  <span>{item.label}</span>
-                </button>
-              );
-            })}
+            {menuItems
+              .filter(item => hasMenuAccess(currentStaff.role, item.id))
+              .map((item) => {
+                const Icon = item.icon as React.ElementType | null;
+                const isActive = currentTab === item.id;
+                const isDashboard = item.id === 'dashboard';
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setTab(item.id)}
+                    className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold rounded-lg transition duration-150 cursor-pointer ${
+                      isDashboard
+                        ? isActive
+                          ? 'text-[#1E3A8A] font-extrabold'
+                          : 'text-slate-600 hover:text-[#1E3A8A] hover:bg-slate-100'
+                        : isActive
+                          ? 'bg-[#1E3A8A] text-white shadow-sm'
+                          : 'text-slate-600 hover:text-[#1E3A8A] hover:bg-slate-100'
+                    }`}
+                  >
+                    {Icon && <Icon className="h-4 w-4 shrink-0" />}
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
           </nav>
 
           <div className="text-right hidden md:block">

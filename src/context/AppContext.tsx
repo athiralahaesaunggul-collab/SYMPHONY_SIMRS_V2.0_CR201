@@ -5,12 +5,12 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Patient, SOAP, Koding, Berkas, AuditLog, Staff, CpptHistoryEntry } from '../types';
-import { 
-  generateMedicalRecordNumber, 
-  generateRakCode, 
-  getCurrentTimestamp, 
-  signSimulatedJWT, 
-  verifySimulatedJWT 
+import {
+  generateMedicalRecordNumber,
+  generateRakCode,
+  getCurrentTimestamp,
+  signSimulatedJWT,
+  verifySimulatedJWT
 } from '../utils/helpers';
 import { validateCDSS } from '../data/icd10Database';
 // Removed Firebase imports - switching to local Express API
@@ -95,7 +95,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Gunakan relative path /api agar Vite proxy meneruskannya ke backend Express port 5000
   // Saat diakses dari LAN, browser akan pakai IP server sebagai baseURL-nya
-  const BACKEND_URL = '/api';
+  const BACKEND_URL = 'https://symphony-simrs-backend.vercel.app';
 
   const fetchSyncData = async () => {
     try {
@@ -103,7 +103,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       const result = await response.json();
       if (result.status === 'success') {
         const { patients: pData, soaps: sData, kodings: kData, berkas: bData, auditLogs: aData, cpptRecords: cData } = result.data;
-        
+
         setPatients(pData);
         setSoaps(sData);
         setKodings(kData);
@@ -231,7 +231,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       module,
       details
     };
-    
+
     setAuditLogs(prev => {
       const updated = [newLog, ...prev];
       localStorage.setItem('symphony_audit_logs', JSON.stringify(updated));
@@ -255,10 +255,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     // Generate real secure simulated JWT Token
     const token = signSimulatedJWT({ name, role });
     const staffMember: Staff = { name, role, token };
-    
+
     setCurrentStaff(staffMember);
     localStorage.setItem('symphony_auth_token', token);
-    
+
     // Add forensic security log
     const logMsg = `Petugas berhasil login. Sesi JWT diamankan dengan token virtual.`;
     const tempStaffLog: AuditLog = {
@@ -301,7 +301,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const existingRmNumbers = patients.map(p => p.rmNumber);
     const rmNumber = generateMedicalRecordNumber(existingRmNumbers);
     const id = `PAT-${Date.now()}`;
-    
+
     const newPatient: Patient = {
       ...patientData,
       id,
@@ -467,7 +467,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     // Get SOAP text to analyze relevance
     const patientSoap = soaps[patientId];
-    const soapText = patientSoap 
+    const soapText = patientSoap
       ? `${patientSoap.subjektif} ${patientSoap.objektif} ${patientSoap.asesmen} ${patientSoap.plan}`
       : '';
 
@@ -670,7 +670,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setSelectedPatientIdForSoapState(null);
         setSelectedPatientIdForKodingState(null);
         await fetchSyncData();
-        
+
         if (currentStaff) {
           addAuditLog('Database Reset', 'Sistem', 'Seluruh data rekam medis di-reset ke pengaturan standar universitas.');
         }

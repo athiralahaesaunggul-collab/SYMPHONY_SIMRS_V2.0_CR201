@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import LogoUEU from '../assets/logo-ueu.png';
+import { hasMenuAccess } from '../App';
 import {
   Users,
   FileText,
@@ -198,23 +199,25 @@ export const Header: React.FC = () => {
 
         {/* Tab-based workstation navigation */}
         <div className="flex space-x-1 -mb-[1px] overflow-x-auto select-none scrollbar-none py-1">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = currentTab === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => setTab(item.id)}
-                className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-semibold rounded-t-xl border transition-all duration-150 cursor-pointer ${isActive
-                  ? 'bg-blue-600 text-white border-blue-600 font-bold shadow-sm shadow-blue-100'
-                  : 'text-slate-600 hover:text-slate-950 border-transparent hover:bg-slate-100'
-                  }`}
-              >
-                <Icon className={`h-4 w-4 ${isActive ? 'text-white' : 'text-slate-500'}`} />
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
+          {menuItems
+            .filter(item => hasMenuAccess(currentStaff.role, item.id))
+            .map((item) => {
+              const Icon = item.icon;
+              const isActive = currentTab === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setTab(item.id)}
+                  className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-semibold rounded-t-xl border transition-all duration-150 cursor-pointer ${isActive
+                    ? 'bg-blue-600 text-white border-blue-600 font-bold shadow-sm shadow-blue-100'
+                    : 'text-slate-600 hover:text-slate-950 border-transparent hover:bg-slate-100'
+                    }`}
+                >
+                  <Icon className={`h-4 w-4 ${isActive ? 'text-white' : 'text-slate-500'}`} />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
         </div>
 
       </div>
