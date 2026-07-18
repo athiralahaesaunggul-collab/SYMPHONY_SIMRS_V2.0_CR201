@@ -16,33 +16,33 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Daftar origin yang diizinkan (whitelist)
-const ALLOWED_ORIGINS = [
-  'https://symphony-simrs-v2-0-cr-201.vercel.app',  // Frontend produksi Vercel
-  'https://symphony-simrs-backend.vercel.app',       // Backend URL sendiri (jika diperlukan)
-  'http://localhost:5173',                            // Vite dev server (default)
-  'http://localhost:3000',                            // CRA / fallback dev
-  'http://localhost:5000',                            // Express dev lokal
-];
-
-// Enable CORS – whitelist origin spesifik + handle preflight OPTIONS secara eksplisit
-app.use(cors({
-  origin: (origin, callback) => {
-    // Izinkan request tanpa origin (Postman, curl, server-to-server)
-    if (!origin) return callback(null, true);
-    if (ALLOWED_ORIGINS.includes(origin)) {
-      return callback(null, true);
-    }
-    return callback(new Error(`CORS: Origin '${origin}' tidak diizinkan.`));
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  credentials: true,
-  optionsSuccessStatus: 204  // Beberapa browser lama butuh 204 untuk preflight
-}));
+// ⚠️  SEMENTARA: CORS dibuka untuk semua origin agar URL preview Vercel tidak terblokir.
+// Ganti kembali dengan whitelist di bawah ini sebelum go-live ke produksi.
+app.use(cors());
 
 // Tangani preflight OPTIONS secara global sebelum route apapun
 app.options('*', cors());
+
+// ── Konfigurasi CORS ketat (aktifkan kembali untuk produksi) ──────────────────
+// const ALLOWED_ORIGINS = [
+//   'https://symphony-simrs-v2-0-cr-201.vercel.app',  // Frontend produksi Vercel
+//   'https://symphony-simrs-backend.vercel.app',       // Backend URL sendiri
+//   'http://localhost:5173',                            // Vite dev server (default)
+//   'http://localhost:3000',                            // CRA / fallback dev
+//   'http://localhost:5000',                            // Express dev lokal
+// ];
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     if (!origin) return callback(null, true);
+//     if (ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
+//     return callback(new Error(`CORS: Origin '${origin}' tidak diizinkan.`));
+//   },
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+//   credentials: true,
+//   optionsSuccessStatus: 204,
+// }));
+// ─────────────────────────────────────────────────────────────────────────────
 
 // Set JSON payload size limit to handle base64 PDF uploads
 app.use(express.json({ limit: '50mb' }));

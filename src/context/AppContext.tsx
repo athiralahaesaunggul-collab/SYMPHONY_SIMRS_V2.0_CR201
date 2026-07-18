@@ -99,7 +99,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const fetchSyncData = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/sync`);
+      const response = await fetch(`${BACKEND_URL}/api/sync`);
       const result = await response.json();
       if (result.status === 'success') {
         const { patients: pData, soaps: sData, kodings: kData, berkas: bData, auditLogs: aData, cpptRecords: cData } = result.data;
