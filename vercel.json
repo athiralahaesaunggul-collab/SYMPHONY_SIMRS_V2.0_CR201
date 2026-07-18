@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    },
-    {
       "src": "server.ts",
       "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
@@ -16,15 +16,11 @@
       "dest": "server.ts"
     },
     {
-      "src": "/sync",
-      "dest": "server.ts"
-    },
-    {
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/"
     }
   ]
 }
