@@ -95,7 +95,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Gunakan relative path /api agar Vite proxy meneruskannya ke backend Express port 5000
   // Saat diakses dari LAN, browser akan pakai IP server sebagai baseURL-nya
-  const BACKEND_URL = 'https://symphony-simrs-backend.vercel.app';
+  const BACKEND_URL = 'https://symphony-simrs-v2-0-cr-201.vercel.app';
 
   const fetchSyncData = async () => {
     try {
